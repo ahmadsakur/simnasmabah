@@ -19,4 +19,5 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::middleware('role:admin')->get('/adminpanel', [App\Http\Controllers\HomeController::class, 'admin'])->name('adminpanel');
+Route::middleware('role:walikelas')->get('/dashboard', [App\Http\Controllers\HomeController::class, 'walikelas'])->name('dashboard');
