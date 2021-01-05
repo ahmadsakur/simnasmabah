@@ -21,14 +21,14 @@
 
    {{-- login asset --}}
    <link rel="stylesheet" type="text/css"
-      href="{{asset('login/fonts/iconic/css/material-design-iconic-font.min.css')}}">
-   <link rel="stylesheet" type="text/css" href="{{asset('login/vendor/animate/animate.css')}}">
-   <link rel="stylesheet" type="text/css" href="{{asset('login/vendor/css-hamburgers/hamburgers.min.css')}}">
-   <link rel="stylesheet" type="text/css" href="{{asset('login/vendor/animsition/css/animsition.min.css')}}">
-   <link rel="stylesheet" type="text/css" href="{{asset('login/vendor/select2/select2.min.css')}}">
-   <link rel="stylesheet" type="text/css" href="{{asset('login/vendor/daterangepicker/daterangepicker.css')}}">
-   <link rel="stylesheet" type="text/css" href="{{asset('login/css/util.css')}}">
-   <link rel="stylesheet" type="text/css" href="{{asset('login/css/main.css')}}">
+      href="{{asset('formlogin/fonts/iconic/css/material-design-iconic-font.min.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('formlogin/vendor/animate/animate.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('formlogin/vendor/css-hamburgers/hamburgers.min.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('formlogin/vendor/animsition/css/animsition.min.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('formlogin/vendor/select2/select2.min.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('formlogin/vendor/daterangepicker/daterangepicker.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('formlogin/css/util.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('formlogin/css/main.css')}}">
 
 
 
@@ -36,15 +36,7 @@
 </head>
 
 <body>
-   <!-- Nav -->
-   <div class="container">
-      <nav class="navbar navbar-light bg-transparent">
-         <a class="navbar-brand" href="#">simna</a>
-      </nav>
-   </div>
-   <!-- end of Nav -->
-   {{-- Content --}}
-   <div class="container">
+   <div class="container ">
       <div class="row landing">
          <div class="col-lg-6 landing-teks">
             <h3 class="headline">Sistem Informasi Management Nilai Akhir</h3>
@@ -101,11 +93,11 @@
    </script>
 
    {{-- login asset --}}
-   <script src="{{asset('login/vendor/animsition/js/animsition.min.js')}}"></script>
-   <script src="{{asset('login/vendor/select2/select2.min.js')}}"></script>
-   <script src="{{asset('login/vendor/daterangepicker/daterangepicker.js')}}"></script>
-   <script src="{{asset('login/vendor/countdowntime/countdowntime.js')}}"></script>
-   <script src="{{asset('login/js/main.js')}}"></script>
+   <script src="{{asset('formlogin/vendor/animsition/js/animsition.min.js')}}"></script>
+   <script src="{{asset('formlogin/vendor/select2/select2.min.js')}}"></script>
+   <script src="{{asset('formlogin/vendor/daterangepicker/daterangepicker.js')}}"></script>
+   <script src="{{asset('formlogin/vendor/countdowntime/countdowntime.js')}}"></script>
+   <script src="{{asset('formlogin/js/main.js')}}"></script>
 </body>
 
 </html>
