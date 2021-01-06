@@ -15,20 +15,18 @@
    <link rel="stylesheet" href="{{asset('css/style.css')}}">
    <link rel="stylesheet" href="{{asset('css/landing.css')}}">
    <!-- fonts -->
-   <link rel="stylesheet" href="https://egkoppel.github.io/product-sans/google-fonts.css">
    <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
    {{-- login asset --}}
-   <link rel="stylesheet" type="text/css"
-      href="{{asset('formlogin/fonts/iconic/css/material-design-iconic-font.min.css')}}">
-   <link rel="stylesheet" type="text/css" href="{{asset('formlogin/vendor/animate/animate.css')}}">
-   <link rel="stylesheet" type="text/css" href="{{asset('formlogin/vendor/css-hamburgers/hamburgers.min.css')}}">
-   <link rel="stylesheet" type="text/css" href="{{asset('formlogin/vendor/animsition/css/animsition.min.css')}}">
-   <link rel="stylesheet" type="text/css" href="{{asset('formlogin/vendor/select2/select2.min.css')}}">
-   <link rel="stylesheet" type="text/css" href="{{asset('formlogin/vendor/daterangepicker/daterangepicker.css')}}">
-   <link rel="stylesheet" type="text/css" href="{{asset('formlogin/css/util.css')}}">
-   <link rel="stylesheet" type="text/css" href="{{asset('formlogin/css/main.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('fonts/iconic/css/material-design-iconic-font.min.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('vendor/animate/animate.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('vendor/css-hamburgers/hamburgers.min.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('vendor/animsition/css/animsition.min.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('vendor/select2/select2.min.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('vendor/daterangepicker/daterangepicker.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
+   <link rel="stylesheet" type="text/css" href="{{asset('css/main.css')}}">
 
 
 
@@ -36,14 +34,15 @@
 </head>
 
 <body>
-   <div class="container ">
+   <div class="container">
       <div class="row landing">
          <div class="col-lg-6 landing-teks">
             <h3 class="headline">Sistem Informasi Management Nilai Akhir</h3>
          </div>
          <div class="col-lg-4 offset-lg-2">
             <div class="wrap-login100">
-               <form class="login100-form validate-form">
+               <form method="POST" action="{{ route('login') }}" class="login100-form validate-form">
+                  @csrf
                   <span class="login100-form-title p-b-26">
                      Sign In
                   </span>
@@ -52,7 +51,7 @@
                   </span>
 
                   <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
-                     <input class="input100" type="text" name="email">
+                     <input class="input100" type="text" name="email" id="email" autocomplete="off">
                      <span class="focus-input100" data-placeholder="Email"></span>
                   </div>
 
@@ -60,7 +59,7 @@
                      <span class="btn-show-pass">
                         <i class="zmdi zmdi-eye"></i>
                      </span>
-                     <input class="input100" type="password" name="pass">
+                     <input class="input100" type="password" name="password" id="password">
                      <span class="focus-input100" data-placeholder="Password"></span>
                   </div>
 
@@ -93,11 +92,11 @@
    </script>
 
    {{-- login asset --}}
-   <script src="{{asset('formlogin/vendor/animsition/js/animsition.min.js')}}"></script>
-   <script src="{{asset('formlogin/vendor/select2/select2.min.js')}}"></script>
-   <script src="{{asset('formlogin/vendor/daterangepicker/daterangepicker.js')}}"></script>
-   <script src="{{asset('formlogin/vendor/countdowntime/countdowntime.js')}}"></script>
-   <script src="{{asset('formlogin/js/main.js')}}"></script>
+   <script src="{{asset('vendor/animsition/js/animsition.min.js')}}"></script>
+   <script src="{{asset('vendor/select2/select2.min.js')}}"></script>
+   <script src="{{asset('vendor/daterangepicker/daterangepicker.js')}}"></script>
+   <script src="{{asset('vendor/countdowntime/countdowntime.js')}}"></script>
+   <script src="{{asset('js/main.js')}}"></script>
 </body>
 
 </html>
