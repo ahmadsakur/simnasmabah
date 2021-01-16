@@ -23,10 +23,14 @@ class HomeController extends Controller
      */
     public function admin()
     {
-        return view('adminpanel');
+
+        return view('layouts/adminpanel');
     }
     public function walikelas()
     {
-        return view('dashboard');
+        if (Auth::user()->hasRole('admin')) {
+            return redirect()->route('adminpanel');
+        }
+        return view('layouts/dashboard');
     }
 }
