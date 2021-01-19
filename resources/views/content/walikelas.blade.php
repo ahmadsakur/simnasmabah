@@ -5,10 +5,18 @@
       <div class="header-body">
          <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
-               <h6 class="h2 text-white d-inline-block mb-0">Data Wali Kelas</h6>
+               <h6 class="h2 text-white d-inline-block mb-0">Data Guru</h6>
+               <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                  <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                     <li class="breadcrumb-item"><a href="#"><i class="fas fa-chalkboard-teacher"></i></a></li>
+                     <li class="breadcrumb-item"><a href="#">Akun</a></li>
+                     <li class="breadcrumb-item active" aria-current="page">Wali Kelas</li>
+                  </ol>
+               </nav>
             </div>
             @if (count($employees) <8) <div class="col-lg-6 col-5 text-right">
-               <a href="#" class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#addTeacherModal">Tambah</a>
+               <a href="#" class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#addTeacherModal"><i
+                     class="fa fa-plus" aria-hidden="true"></i> Insert</a>
          </div>
          @endif
 
@@ -82,7 +90,8 @@
                <div class="modal-body">
                   <div class="form-group">
                      <label for="name">Nama Lengkap</label>
-                     <input type="text" class="form-control" name="name" placeholder="ex : ahmad sakur" required>
+                     <input type="text" class="form-control" name="name" placeholder="ex : ahmad sakur"
+                        autocomplete="off" required>
                   </div>
                   <div class="form-row">
                      <div class="form-group col-md-8">
@@ -178,7 +187,7 @@
                </div>
                <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Update</button>
                </div>
             </form>
          </div>

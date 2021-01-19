@@ -107,7 +107,7 @@
                      </div>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">
+                     <a class="nav-link" href="/siswa">
                         <i class="ni ni-hat-3 text-info"></i>
                         <span class="nav-link-text">Data Siswa</span>
                      </a>
@@ -115,7 +115,7 @@
                   <li class="nav-item">
                      <a class="nav-link" href="/guru">
                         <i class="ni ni-badge text-red"></i>
-                        <span class="nav-link-text">Data Wali Kelas</span>
+                        <span class="nav-link-text">Data Guru</span>
                      </a>
                   </li>
                </ul>

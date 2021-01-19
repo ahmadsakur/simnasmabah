@@ -27,3 +27,4 @@ Route::middleware('role:walikelas')->get('/dashboard', [App\Http\Controllers\Hom
 
 //admin content route
 Route::middleware('role:admin')->resource('guru', App\Http\Controllers\WaliKelasController::class);
+Route::middleware('role:admin')->resource('siswa', App\Http\Controllers\StudentController::class);
