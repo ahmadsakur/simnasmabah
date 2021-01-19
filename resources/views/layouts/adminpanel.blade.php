@@ -206,6 +206,8 @@
    <!-- Argon JS -->
    <script src="argon/js/argon.js?v=1.1.0"></script>
    @stack('customscripts')
+   @include('sweetalert::alert')
+
 
 </body>
 

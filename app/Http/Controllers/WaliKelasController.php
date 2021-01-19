@@ -54,8 +54,7 @@ class WaliKelasController extends Controller
         ]);
         $insertQ->assignRole('walikelas');
 
-        return redirect('/guru');
-        // ->with('toast_success', 'Wali Kelas berhasil ditambahkan');
+        return redirect('/guru')->with('toast_success', 'Wali Kelas berhasil ditambahkan');
     }
 
     /**
@@ -98,7 +97,7 @@ class WaliKelasController extends Controller
             'class' => $request["class"],
             'password' => Hash::make($request["password"])
         ]);
-        return redirect('/guru');
+        return redirect('/guru')->with('toast_info', 'Data Berhasil diubah');;
     }
 
     /**
@@ -110,6 +109,6 @@ class WaliKelasController extends Controller
     public function destroy(Request $request, $id)
     {
         User::where('id', $request["id"])->delete();
-        return redirect('/guru');
+        return redirect('/guru')->with('toast_success', 'Wali Kelas Berhasil dihapus');;
     }
 }
