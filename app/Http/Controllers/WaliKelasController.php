@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class WaliKelasController extends Controller
@@ -38,6 +39,23 @@ class WaliKelasController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            "name" => 'required',
+            "email" => 'required|unique:users',
+            "class" => 'required',
+            "password" => 'required'
+        ]);
+
+        $insertQ = User::create([
+            "name" => $request["name"],
+            "email" => $request["email"],
+            "class" => $request["class"],
+            "password" => Hash::make($request["password"])
+        ]);
+        $insertQ->assignRole('walikelas');
+
+        return redirect('/guru');
+        // ->with('toast_success', 'Wali Kelas berhasil ditambahkan');
     }
 
     /**
@@ -46,9 +64,10 @@ class WaliKelasController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
-        //
+        $guru = User::getGuru($id);
+        return response()->json($guru);
     }
 
     /**
@@ -69,9 +88,17 @@ class WaliKelasController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        //
+        // dd($request["id"]);
+
+        User::where('id', $request["id"])->update([
+            'name' => $request["name"],
+            'email' => $request["email"],
+            'class' => $request["class"],
+            'password' => Hash::make($request["password"])
+        ]);
+        return redirect('/guru');
     }
 
     /**
@@ -80,8 +107,9 @@ class WaliKelasController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Request $request, $id)
     {
-        //
+        User::where('id', $request["id"])->delete();
+        return redirect('/guru');
     }
 }

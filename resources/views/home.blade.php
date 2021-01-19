@@ -44,7 +44,7 @@
                <form method="POST" action="{{ route('login') }}" class="login100-form validate-form">
                   @csrf
                   <span class="login100-form-title p-b-26">
-                     Sign In
+                     Welcome
                   </span>
                   <span class="login100-form-title p-b-48">
                      <i class="zmdi zmdi-font"></i>

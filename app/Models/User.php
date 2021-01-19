@@ -42,4 +42,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function getGuru($id)
+    {
+        $guru = User::where('id', $id)->get();
+
+        return $guru;
+    }
 }

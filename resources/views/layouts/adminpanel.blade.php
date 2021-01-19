@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
    <meta charset="utf-8">
@@ -20,6 +20,7 @@
    <link rel=" stylesheet" href="{{asset('argon/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css')}}">
    <!-- Argon CSS -->
    <link rel="stylesheet" href="{{asset('argon/css/argon.css?v=1.1.0')}}" type="text/css">
+
 </head>
 
 <body>
@@ -77,13 +78,13 @@
                               <a href="#" class="nav-link">Semester III</a>
                            </li>
                            <li class="nav-item">
-                              <a href="#" class="nav-link">Semester IIII</a>
+                              <a href="#" class="nav-link">Semester IV</a>
                            </li>
                            <li class="nav-item">
-                              <a href="#" class="nav-link">Semester IIIII</a>
+                              <a href="#" class="nav-link">Semester V</a>
                            </li>
                            <li class="nav-item">
-                              <a href="#" class="nav-link">Semester IIIIII</a>
+                              <a href="#" class="nav-link">Semester VI</a>
                            </li>
                         </ul>
                      </div>
@@ -112,7 +113,7 @@
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">
+                     <a class="nav-link" href="/guru">
                         <i class="ni ni-badge text-red"></i>
                         <span class="nav-link-text">Data Wali Kelas</span>
                      </a>
@@ -185,11 +186,15 @@
    </div>
    <!-- Argon Scripts -->
    <!-- Core -->
-   <script src="argon/vendor/jquery/dist/jquery.min.js"></script>
-   <script src="argon/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+   {{-- <script src="argon/vendor/jquery/dist/jquery.min.js"></script> --}}
+   <script src="{{asset('argon/vendor/jquery/jquery.min.js')}}"></script>
+   {{-- <script src="argon/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script> --}}
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+   </script>
    <script src="argon/vendor/js-cookie/js.cookie.js"></script>
    <script src="argon/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-   <script src="argon/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery-scroll-lock@3.1.3/jquery-scrollLock.min.js"></script>
    <!-- Optional JS -->
    <script src="argon/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
    <script src="argon/vendor/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
@@ -198,11 +203,10 @@
    <script src="argon/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
    <script src="argon/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
    <script src="argon/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
-   <script src="argon/vendor/datatables.net-select/js/dataTables.select.min.js"></script>
    <!-- Argon JS -->
    <script src="argon/js/argon.js?v=1.1.0"></script>
-   <!-- Demo JS - remove this in your project -->
-   <script src="argon/js/demo.min.js"></script>
+   @stack('customscripts')
+
 </body>
 
 </html>
