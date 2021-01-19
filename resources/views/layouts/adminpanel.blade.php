@@ -49,7 +49,7 @@
                <!-- Nav items -->
                <ul class="navbar-nav">
                   <li class="nav-item">
-                     <a class="nav-link" href="#">
+                     <a class="nav-link" href="{{route('adminpanel')}}">
                         <i class="ni ni-shop text-primary"></i>
                         <span class="nav-link-text">Dashboard</span>
                      </a>

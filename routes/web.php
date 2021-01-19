@@ -23,7 +23,7 @@ Route::match(['get', 'post'], 'register', function () {
 });
 
 Route::middleware('role:admin')->get('/adminpanel', [App\Http\Controllers\HomeController::class, 'admin'])->name('adminpanel');
-Route::middleware('role:walikelas')->get('/dashboard', [App\Http\Controllers\HomeController::class, 'walikelas'])->name('dashboard');
+Route::middleware('role:walikelas')->get('/dashboard', [App\Http\Controllers\HomeController::class, 'walikelas'])->name('teacherpanel');
 
 //admin content route
 Route::middleware('role:admin')->resource('guru', App\Http\Controllers\WaliKelasController::class);
