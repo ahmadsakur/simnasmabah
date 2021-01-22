@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\StudentExport;
+use App\Imports\StudentImport;
 use App\Models\student;
+use App\Models\User;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -108,6 +113,25 @@ class StudentController extends Controller
     public function destroy(Request $request, $id)
     {
         student::where('id', $request["id"])->delete();
-        return redirect('/siswa')->with('toast_success', 'Siswa Berhasil dihapus');;
+        return redirect('/siswa')->with('toast_success', 'Siswa Berhasil dihapus');
+    }
+    public function resetsiswa(Request $request)
+    {
+        student::truncate();
+        return redirect('/siswa')->with('toast_success', 'Tabel Berhasil direset');
+    }
+
+    public function studentexport()
+    {
+        return Excel::download(new StudentExport, 'Data Siswa.xlsx');
+    }
+    public function studentimport(Request $request)
+    {
+        $file = $request->file('file');
+        $namaFile = $file->getClientOriginalName();
+        $file->move('DataSiswa', $namaFile);
+
+        Excel::import(new StudentImport, public_path('/DataSiswa/' . $namaFile));
+        return redirect('/siswa')->with('toast_success', 'Data Berhasil diUpload');
     }
 }

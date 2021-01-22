@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -28,9 +29,9 @@ class HomeController extends Controller
     }
     public function walikelas()
     {
-        if (Auth::user()->hasRole('admin')) {
-            return redirect()->route('adminpanel');
-        }
-        return view('layouts/teacherpanel');
+        // if (Auth::user()->hasRole('admin')) {
+        //     return redirect()->route('adminpanel');
+        // }
+        return view('content/teacherhome');
     }
 }

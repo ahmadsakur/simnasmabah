@@ -10,15 +10,24 @@
                   <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                      <li class="breadcrumb-item"><a href="#"><i class="fas fa-graduation-cap"></i></a></li>
                      <li class="breadcrumb-item"><a href="#">Biodata</a></li>
-                     <li class="breadcrumb-item active" aria-current="page">Siswa</li>
                   </ol>
                </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-               <a href="#" class="btn btn-sm btn-success" data-toggle="modal" data-target="#importStudentModal"><i
-                     class="fa fa-file-excel" aria-hidden="true"></i> Import</a>
-               <a href="#" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#destroyStudentModal"><i
-                     class="fa fa-trash" aria-hidden="true"></i> Destroy</a>
+               <div class="dropdown">
+                  <button class="btn btn-success btn-sm dropdown-toggle" type="button" id="dropdownMenu2"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     <i class="fa fa-file-excel" aria-hidden="true"></i><span>Batch</span>
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                     <button class="dropdown-item" type="button" data-toggle="modal"
+                        data-target="#uploadStudentModal"><i class="fas fa-upload"></i><span>Upload</span></button>
+                     <a href="{{route('studentexport')}}" class="dropdown-item" type="button"><i
+                           class="fas fa-download"></i><span>Download</span></a>
+                     <button class="dropdown-item" id="resetStudentButton" type="button" data-toggle="modal"
+                        data-target="#resetStudentModal"><i class="fas fa-redo-alt"></i><span>Reset</span></button>
+                  </div>
+               </div>
                <a href="#" class="btn btn-sm btn-neutral" data-toggle="modal" data-target="#addStudentModal"><i
                      class="fa fa-plus" aria-hidden="true"></i> Insert</a>
             </div>
@@ -252,6 +261,58 @@
          </div>
       </div>
    </div>
+   <!-- Upload Modal -->
+   <div class="modal fade" id="uploadStudentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Upload Data Siswa</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <form role="form" action="{{route('studentimport')}}" method="POST" enctype="multipart/form-data">
+               @csrf
+
+               <div class="modal-body">
+                  <h3>Pilih File Dataset</h3>
+                  <input type="file" class="form-control" name="file" required>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-success">Upload</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+   <!-- Reset Modal -->
+   <div class="modal fade" id="resetStudentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               {{-- <h5 class="modal-title" id="exampleModalLabel">Hapus Tabel Siswa</h5> --}}
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <form role="form" action="{{ route('resetsiswa') }}" method="POST">
+               @csrf
+
+               <div class="modal-body">
+                  <h3>Masukkan Password untuk menghapus data</h3>
+                  <input type="password" class="form-control" name="password" id="resetpassword">
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-danger">Delete</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
    <!-- End of Modal -->
    <!-- Footer -->
    <footer class="footer pt-0">
@@ -302,6 +363,25 @@
    $(document).on('click','button#deleteStudentButton',function(){
    let deleteID = $(this).data('destroy');
    $('#delete-id').val(deleteID);
+
+});
+
+   //reset modal
+
+   $(document).on('click','button#resetStudentButton',function(){
+      var password = document.getElementById("resetpassword");
+
+      function validatePassword(){
+         if(password.value != 'hapussemuanya') {
+            password.setCustomValidity("Passwords salah");
+         } else {
+            password.setCustomValidity('');
+         }
+      }
+
+      password.onchange = validatePassword;
+      password.onkeyup = validatePassword;
+      
 
 });
 

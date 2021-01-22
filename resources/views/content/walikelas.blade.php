@@ -10,7 +10,7 @@
                   <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                      <li class="breadcrumb-item"><a href="#"><i class="fas fa-chalkboard-teacher"></i></a></li>
                      <li class="breadcrumb-item"><a href="#">Akun</a></li>
-                     <li class="breadcrumb-item active" aria-current="page">Wali Kelas</li>
+                     {{-- <li class="breadcrumb-item active" aria-current="page">Wali Kelas</li> --}}
                   </ol>
                </nav>
             </div>
@@ -243,18 +243,18 @@
 @push('customscripts')
 <script>
    var password = document.getElementById("password");
-var confirm_password = document.getElementById("confirmPassword");
+   var confirm_password = document.getElementById("confirmPassword");
 
-function validatePassword(){
-  if(password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords Don't Match");
-  } else {
-    confirm_password.setCustomValidity('');
-  }
-}
+   function validatePassword(){
+      if(password.value != confirm_password.value) {
+         confirm_password.setCustomValidity("Passwords Don't Match");
+      } else {
+         confirm_password.setCustomValidity('');
+      }
+   }
 
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
+   password.onchange = validatePassword;
+   confirm_password.onkeyup = validatePassword;
 
 // edit modal
 $(document).on('click','button#editTeacherButton',function(){

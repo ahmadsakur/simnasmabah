@@ -459,9 +459,9 @@ iframe {
     transition: .3s;
 }
 
-/* .wrap-login100-form-btn:hover .login100-form-bgbtn {
+.wrap-login100-form-btn:hover .login100-form-bgbtn {
     left: 0;
-} */
+}
 
 
 /*------------------------------------------------------------------

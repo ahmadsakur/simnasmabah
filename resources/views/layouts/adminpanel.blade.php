@@ -55,53 +55,21 @@
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="#">
-                        <i class="ni ni-trophy text-info"></i>
-                        <span class="nav-link-text">Kelola Nilai</span>
-                     </a>
-                  </li>
-                  <li class="nav-item">
                      <a class="nav-link" href="#navbar-dashboards" data-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="navbar-dashboards">
-                        <i class="ni ni-bullet-list-67 text-info"></i>
-                        <span class="nav-link-text">Nilai Raport</span>
+                        <i class="ni ni-trophy text-info"></i>
+                        <span class="nav-link-text">Kelola Nilai</span>
                      </a>
                      <div class="collapse" id="navbar-dashboards">
                         <ul class="nav nav-sm flex-column">
                            <li class="nav-item">
-                              <a href="#" class="nav-link">Semester I</a>
+                              <a href="#" class="nav-link">Raport</a>
                            </li>
-                           <li class="nav-item">
-                              <a href="#" class="nav-link">Semester II</a>
-                           </li>
-                           <li class="nav-item">
-                              <a href="#" class="nav-link">Semester III</a>
-                           </li>
-                           <li class="nav-item">
-                              <a href="#" class="nav-link">Semester IV</a>
-                           </li>
-                           <li class="nav-item">
-                              <a href="#" class="nav-link">Semester V</a>
-                           </li>
-                           <li class="nav-item">
-                              <a href="#" class="nav-link">Semester VI</a>
-                           </li>
-                        </ul>
-                     </div>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#ujian" data-toggle="collapse" role="button" aria-expanded="false"
-                        aria-controls="ujian">
-                        <i class="ni ni-align-left-2 text-orange"></i>
-                        <span class="nav-link-text">Nilai Ujian</span>
-                     </a>
-                     <div class="collapse" id="ujian">
-                        <ul class="nav nav-sm flex-column">
                            <li class="nav-item">
                               <a href="#" class="nav-link">Ujian Sekolah</a>
                            </li>
                            <li class="nav-item">
-                              <a href="#" class="nav-link">Ujian Praktik</a>
+                              <a href="#" class="nav-link">Ujian Praktek</a>
                            </li>
                         </ul>
                      </div>
