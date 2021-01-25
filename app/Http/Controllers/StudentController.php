@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Exports\StudentExport;
 use App\Imports\StudentImport;
 use App\Models\student;
-use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -117,13 +117,13 @@ class StudentController extends Controller
     }
     public function resetsiswa(Request $request)
     {
-        student::truncate();
+        DB::table('students')->delete();
         return redirect('/siswa')->with('toast_success', 'Tabel Berhasil direset');
     }
 
     public function studentexport()
     {
-        return Excel::download(new StudentExport, 'Data Siswa.xlsx');
+        return Excel::download(new StudentExport, 'Laporan Data Siswa.xlsx');
     }
     public function studentimport(Request $request)
     {

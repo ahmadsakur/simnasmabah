@@ -17,7 +17,7 @@ class CreateStudentsTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('TTL');
-            $table->string('NIS');
+            $table->string('NIS')->unique();
             $table->string('NISN');
             $table->string('Kelas');
             $table->string('no_peserta');

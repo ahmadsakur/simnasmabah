@@ -4,8 +4,9 @@ namespace App\Imports;
 
 use App\Models\student;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class StudentImport implements ToModel
+class StudentImport implements ToModel, WithHeadingRow
 {
     /**
      * @param array $row
@@ -14,15 +15,16 @@ class StudentImport implements ToModel
      */
     public function model(array $row)
     {
+
         return new student([
             //
-            'nama'      => $row[1],
-            'TTL'       => $row[2],
-            'NIS'       => $row[3],
-            'NISN'      => $row[4],
-            'Kelas'     => $row[5],
-            'no_peserta'      => $row[6],
-            'wali_murid'      => $row[7],
+            'nama'      => $row['nama_lengkap'],
+            'TTL'       => $row['ttl'],
+            'NIS'       => $row['nis'],
+            'NISN'      => $row['nisn'],
+            'Kelas'     => $row['kelas'],
+            'no_peserta'      => $row['no_peserta'],
+            'wali_murid'      => $row['wali_murid'],
         ]);
     }
 }

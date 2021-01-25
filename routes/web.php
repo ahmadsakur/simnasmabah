@@ -28,9 +28,11 @@ Route::middleware('role:walikelas')->get('/dashboard', [App\Http\Controllers\Hom
 //admin content route
 Route::middleware('role:admin')->resource('guru', App\Http\Controllers\WaliKelasController::class);
 Route::middleware('role:admin')->resource('siswa', App\Http\Controllers\StudentController::class);
+Route::middleware('role:admin')->resource('raport', App\Http\Controllers\RaportController::class);
+
 Route::post('/resetsiswa', 'App\Http\Controllers\StudentController@resetsiswa')->name('resetsiswa');
 Route::get('/studentexport', 'App\Http\Controllers\StudentController@studentexport')->name('studentexport');
 Route::post('/studentimport', 'App\Http\Controllers\StudentController@studentimport')->name('studentimport');
 
-
-//testview dulu
+Route::post('/resetraport', 'App\Http\Controllers\RaportController@resetraport')->name('resetraport');
+Route::post('/raportimport', 'App\Http\Controllers\RaportController@raportimport')->name('raportimport');
