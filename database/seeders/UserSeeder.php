@@ -23,8 +23,9 @@ class UserSeeder extends Seeder
 
         //testwali
         $wali = User::create([
-            'name' => 'Wali Kelas Keren',
+            'name' => 'Wali Kelas',
             'email' => 'wali@simna.com',
+            'class' => 'MIPA 1',
             'password' => bcrypt('walisimna')
         ]);
         $wali->assignRole('walikelas');

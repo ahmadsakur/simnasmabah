@@ -15,7 +15,7 @@ class CreateRaportsTable extends Migration
     {
         Schema::create('raports', function (Blueprint $table) {
             $table->id();
-            $table->string('NIS');
+            $table->integer('NIS');
             $table->foreign('NIS')->references('NIS')->on('students')->onUpdate('cascade')->onDelete('cascade');;
             $table->string('semester');
             //kelompok A

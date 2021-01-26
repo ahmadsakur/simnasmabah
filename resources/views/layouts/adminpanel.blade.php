@@ -49,14 +49,31 @@
                <ul class="navbar-nav">
                   <li class="nav-item">
                      <a class="nav-link" href="{{route('adminpanel')}}">
-                        <i class="ni ni-shop text-primary"></i>
+                        <i class="fa fa-home text-info" aria-hidden="true"></i>
                         <span class="nav-link-text">Dashboard</span>
                      </a>
                   </li>
                   <li class="nav-item">
+                     <a class="nav-link" href="#nilai-akhir" data-toggle="collapse" role="button" aria-expanded="false"
+                        aria-controls="nilai-akhir">
+                        <i class="ni ni-trophy text-info"></i>
+                        <span class="nav-link-text">Nilai Akhir</span>
+                     </a>
+                     <div class="collapse" id="nilai-akhir">
+                        <ul class="nav nav-sm flex-column">
+                           <li class="nav-item">
+                              <a href="/finalraport" class="nav-link">Raport</a>
+                           </li>
+                           <li class="nav-item">
+                              <a href="#" class="nav-link">Ujian Sekolah</a>
+                           </li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="nav-item">
                      <a class="nav-link" href="#navbar-dashboards" data-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="navbar-dashboards">
-                        <i class="ni ni-trophy text-info"></i>
+                        <i class="fas fa-chart-bar text-danger" aria-hidden="true"></i>
                         <span class="nav-link-text">Kelola Nilai</span>
                      </a>
                      <div class="collapse" id="navbar-dashboards">

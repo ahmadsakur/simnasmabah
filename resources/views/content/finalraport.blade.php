@@ -6,20 +6,17 @@
       <div class="header-body">
          <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
-               <h6 class="h2 text-white d-inline-block mb-0">Raport Siswa</h6>
+               <h6 class="h2 text-white d-inline-block mb-0">Nilai Akhir</h6>
                <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                   <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                      <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-                     <li class="breadcrumb-item"><a href="#">Data Nilai</a></li>
+                     <li class="breadcrumb-item"><a href="#">Raport</a></li>
                   </ol>
                </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-               <button class="btn btn-sm btn-success" type="button" data-toggle="modal"
-                  data-target="#uploadRaportModal"><i class="fa fa-file-excel"
-                     aria-hidden="true"></i><span>Upload</span></button>
-               <button type="button" class="btn btn-sm btn-danger" id="resetRaportButton" data-toggle="modal"
-                  data-target="#resetRaportModal"><i class="fas fa-redo-alt"></i><span>Reset</span></button>
+               <button type="button" class="btn btn-sm btn-neutral"><i
+                     class="fas fa-redo-alt"></i><span>Refresh</span></button>
             </div>
          </div>
       </div>
@@ -44,7 +41,6 @@
                      <tr>
                         <th>Nama</th>
                         <th>Kelas</th>
-                        <th>Semester</th>
                         <th>AGM</th>
                         <th>PPKn</th>
                         <th>IND</th>
@@ -63,26 +59,25 @@
                      </tr>
                   </thead>
                   <tbody>
-                     @forelse($sciences as $science)
+                     @forelse($finalsciences as $science)
                      <tr>
-                        <td> {{ $science->nama }} </td>
+                        <td> {{ $science->Nama }} </td>
                         <td> {{ $science->Kelas }} </td>
-                        <td> {{ $science->semester }} </td>
-                        <td> {{ $science->agama }}</td>
-                        <td> {{ $science->PPKn }}</td>
-                        <td> {{ $science->bahasa_indonesia }}</td>
-                        <td> {{ $science->matematika }}</td>
-                        <td> {{ $science->sejarah_indonesia }}</td>
-                        <td> {{ $science->bahasa_inggris }}</td>
-                        <td> {{ $science->seni_budaya }}</td>
+                        <td> {{ substr("$science->AGAMA",0,5) }}</td>
+                        <td> {{ $science->PPKN }}</td>
+                        <td> {{ $science->INDO }}</td>
+                        <td> {{ $science->MTK }}</td>
+                        <td> {{ $science->SEJARAH }}</td>
+                        <td> {{ $science->EN }}</td>
+                        <td> {{ $science->SENI }}</td>
                         <td> {{ $science->PJOK }}</td>
                         <td> {{ $science->PKWU }}</td>
-                        <td> {{ $science->bahasa_jawa }}</td>
-                        <td> {{ $science->jurusan1 }}</td>
-                        <td> {{ $science->jurusan2 }}</td>
-                        <td> {{ $science->jurusan3 }}</td>
-                        <td> {{ $science->jurusan4 }}</td>
-                        <td> {{ $science->peminatan }}</td>
+                        <td> {{ $science->JAWA }}</td>
+                        <td> {{ $science->MTK2 }}</td>
+                        <td> {{ $science->BIO }}</td>
+                        <td> {{ $science->FIS }}</td>
+                        <td> {{ $science->KIM }}</td>
+                        <td> {{ $science->PEMINATAN }}</td>
                      </tr>
                      @empty
                      <tr>
@@ -126,32 +121,32 @@
                      </tr>
                   </thead>
                   <tbody>
-                     @forelse($socials as $social)
+                     {{-- @forelse($socials as $social)
                      <tr>
                         <td> {{ $social->nama }} </td>
-                        <td> {{ $social->Kelas }} </td>
-                        <td> {{ $social->semester }} </td>
-                        <td> {{ $social->agama }}</td>
-                        <td> {{ $social->PPKn }}</td>
-                        <td> {{ $social->bahasa_indonesia }}</td>
-                        <td> {{ $social->matematika }}</td>
-                        <td> {{ $social->sejarah_indonesia }}</td>
-                        <td> {{ $social->bahasa_inggris }}</td>
-                        <td> {{ $social->seni_budaya }}</td>
-                        <td> {{ $social->PJOK }}</td>
-                        <td> {{ $social->PKWU }}</td>
-                        <td> {{ $social->bahasa_jawa }}</td>
-                        <td> {{ $social->jurusan1 }}</td>
-                        <td> {{ $social->jurusan2 }}</td>
-                        <td> {{ $social->jurusan3 }}</td>
-                        <td> {{ $social->jurusan4 }}</td>
-                        <td> {{ $social->peminatan }}</td>
+                     <td> {{ $social->Kelas }} </td>
+                     <td> {{ $social->semester }} </td>
+                     <td> {{ $social->agama }}</td>
+                     <td> {{ $social->PPKn }}</td>
+                     <td> {{ $social->bahasa_indonesia }}</td>
+                     <td> {{ $social->matematika }}</td>
+                     <td> {{ $social->sejarah_indonesia }}</td>
+                     <td> {{ $social->bahasa_inggris }}</td>
+                     <td> {{ $social->seni_budaya }}</td>
+                     <td> {{ $social->PJOK }}</td>
+                     <td> {{ $social->PKWU }}</td>
+                     <td> {{ $social->bahasa_jawa }}</td>
+                     <td> {{ $social->jurusan1 }}</td>
+                     <td> {{ $social->jurusan2 }}</td>
+                     <td> {{ $social->jurusan3 }}</td>
+                     <td> {{ $social->jurusan4 }}</td>
+                     <td> {{ $social->peminatan }}</td>
                      </tr>
                      @empty
                      <tr>
                         <td colspan="17" align="center">Data Nilai Tidak diTemukan</td>
                      </tr>
-                     @endforelse
+                     @endforelse --}}
                   </tbody>
                </table>
             </div>
@@ -227,25 +222,6 @@
 @endsection
 @push('customscripts')
 <script>
-   //reset modal
-
-
-   $(document).on('click','button#resetRaportButton',function(){
-      var password = document.getElementById("resetpassword");
-
-      function validatePassword(){
-         if(password.value != 'hapussemuanya') {
-            password.setCustomValidity("Passwords salah");
-         } else {
-            password.setCustomValidity('');
-         }
-      }
-
-      password.onchange = validatePassword;
-      password.onkeyup = validatePassword;
-      
-
-});
 
 </script>
 @endpush

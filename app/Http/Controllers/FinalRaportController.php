@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\raport;
-use App\Imports\RaportImport;
 use Illuminate\Support\Facades\DB;
-use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
-class RaportController extends Controller
+class FinalRaportController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,18 +15,33 @@ class RaportController extends Controller
      */
     public function index()
     {
-        $sciences = DB::table('raports')
+        //
+        $finalsciences =
+            DB::table('raports')
             ->join('students', 'raports.NIS', '=', 'students.NIS')
-            ->select('raports.*', 'students.nama', 'students.Kelas')
-            ->where('students.Kelas', 'like', 'MIPA%')
+            ->select(
+                'students.nama as Nama',
+                'students.Kelas as Kelas',
+                DB::raw('avg(raports.agama) as AGAMA'),
+                DB::raw('avg(raports.PPKn) as PPKN'),
+                DB::raw('avg(raports.bahasa_indonesia) as INDO'),
+                DB::raw('avg(raports.matematika) as MTK'),
+                DB::raw('avg(raports.sejarah_indonesia) as SEJARAH'),
+                DB::raw('avg(raports.bahasa_inggris) as EN'),
+                DB::raw('avg(raports.seni_budaya) as SENI'),
+                DB::raw('avg(raports.PJOK) as PJOK'),
+                DB::raw('avg(raports.PKWU) as PKWU'),
+                DB::raw('avg(raports.bahasa_jawa) as JAWA'),
+                DB::raw('avg(raports.jurusan1) as MTK2'),
+                DB::raw('avg(raports.jurusan2) as BIO'),
+                DB::raw('avg(raports.jurusan3) as FIS'),
+                DB::raw('avg(raports.jurusan4) as KIM'),
+                DB::raw('avg(raports.peminatan) as PEMINATAN')
+            )
+            ->where('Kelas', 'like', 'MIPA%')
+            ->groupBy('Nama', 'Kelas')
             ->get();
-
-        $socials = DB::table('raports')
-            ->join('students', 'raports.NIS', '=', 'students.NIS')
-            ->select('raports.*', 'students.nama', 'students.Kelas')
-            ->where('students.Kelas', 'like', 'IPS%')
-            ->get();
-        return view('content.raport', compact('sciences', 'socials'));
+        return view('content.finalraport', compact('finalsciences'));
     }
 
     /**
@@ -95,21 +108,5 @@ class RaportController extends Controller
     public function destroy(raport $raport)
     {
         //
-    }
-
-    public function resetraport(Request $request)
-    {
-        DB::table('raports')->delete();
-        return redirect('/raport')->with('toast_success', 'Tabel Berhasil direset');
-    }
-
-    public function raportimport(Request $request)
-    {
-        $file = $request->file('file');
-        $namaFile = $file->getClientOriginalName();
-        $file->move('Dataset', $namaFile);
-
-        Excel::import(new RaportImport, public_path('/Dataset/' . $namaFile));
-        return redirect('/raport')->with('toast_success', 'Raport berhasil di upload');
     }
 }

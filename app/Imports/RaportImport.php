@@ -15,9 +15,28 @@ class RaportImport implements ToModel, WithHeadingRow
      */
     public function model(array $row)
     {
+        // return new raport([
+        //     'NIS'   => $row[0],
+        //     'semester'  => $row[1],
+        //     'agama' => $row[2],
+        //     'PPKn'  => $row[3],
+        //     'bahasa_indonesia'  => $row[4],
+        //     'matematika'    => $row[5],
+        //     'sejarah_indonesia' => $row[6],
+        //     'bahasa_inggris'    => $row[7],
+        //     'seni_budaya'   => $row[8],
+        //     'PJOK'  => $row[9],
+        //     'PKWU'  => $row[10],
+        //     'bahasa_jawa'   => $row[11],
+        //     'jurusan1'  => $row[12],
+        //     'jurusan2'  => $row[13],
+        //     'jurusan3'  => $row[14],
+        //     'jurusan4'  => $row[15],
+        //     'peminatan' => $row[16],
+        // ]);
+
         return new raport([
-            //
-            'NIS'   => $row['nis'],
+            'NIS'   => $row['kode'],
             'semester'  => $row['semester'],
             'agama' => $row['agama'],
             'PPKn'  => $row['ppkn'],
