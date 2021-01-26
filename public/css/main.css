@@ -75,13 +75,7 @@ h6 {
     margin: 0px;
 }
 
-p {
-    font-family: Poppins-Regular;
-    font-size: 14px;
-    line-height: 1.7;
-    color: #666666;
-    margin: 0px;
-}
+
 
 ul,
 li {
@@ -226,7 +220,7 @@ iframe {
 }
 
 .wrap-login100 {
-    width: 390px;
+    /* width: 390px; */
     background: #fff;
     border-radius: 10px;
     overflow: hidden;

@@ -50,9 +50,13 @@ body {
 @media (min-width: 992px) {
 
     /* landing */
+    .wrap-login100 {
+        margin-top: 40px;
+    }
+
     .landing {
         text-align: left;
-        margin-top: 50px;
+        /* margin-top: 50px; */
         height: 100%;
     }
 
