@@ -17,7 +17,6 @@
 
    <!-- CSS -->
    <link rel="stylesheet" href="landing/css/style.css">
-   <link rel="stylesheet" href="landing/css/landing.css">
    <link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
    <link rel="stylesheet" type="text/css" href="{{asset('css/main.css')}}">
    <link rel="stylesheet" type="text/css" href="{{asset('fonts/iconic/css/material-design-iconic-font.min.css')}}">

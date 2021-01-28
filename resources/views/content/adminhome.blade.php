@@ -37,10 +37,6 @@
                            </div>
                         </div>
                      </div>
-                     <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                        <span class="text-nowrap">Since last month</span>
-                     </p>
                   </div>
                </div>
             </div>
@@ -59,10 +55,6 @@
                            </div>
                         </div>
                      </div>
-                     <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                        <span class="text-nowrap">Since last month</span>
-                     </p>
                   </div>
                </div>
             </div>
@@ -81,10 +73,6 @@
                            </div>
                         </div>
                      </div>
-                     <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                        <span class="text-nowrap">Since last month</span>
-                     </p>
                   </div>
                </div>
             </div>
@@ -103,10 +91,6 @@
                            </div>
                         </div>
                      </div>
-                     <p class="mt-3 mb-0 text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                        <span class="text-nowrap">Since last month</span>
-                     </p>
                   </div>
                </div>
             </div>
@@ -117,76 +101,65 @@
 {{-- page content --}}
 <div class="container-fluid mt--6">
    <div class="row">
-      <div class="col-xl-8">
+      <div class="col-xl-5">
          <div class="card">
-            <div class="card-header">
-               <h4>Invoices</h4>
-               <div class="card-header-action">
-                  <a href="#" class="btn btn-danger">View More <i class="fas fa-chevron-right"></i></a>
+            <div class="card-header border-0">
+               <div class="row align-items-center">
+                  <div class="col">
+                     <h3 class="mb-0">Download Template</h3>
+                  </div>
+                  <div class="col text-right">
+                     <a href="#!" class="btn btn-sm btn-danger"> <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                        <span>Download All</span></a>
+                  </div>
                </div>
             </div>
             <div class="card-body p-0">
-               <div class="table-responsive table-invoice">
+               <div class="table-responsive table-oice">
                   <table class="table table-striped">
                      <tbody>
                         <tr>
-                           <th>Invoice ID</th>
-                           <th>Customer</th>
-                           <th>Status</th>
-                           <th>Due Date</th>
+                           <th>No</th>
+                           <th>Nama File</th>
+                           <th>Type</th>
                            <th>Action</th>
                         </tr>
                         <tr>
-                           <td><a href="#">INV-87239</a></td>
-                           <td class="font-weight-600">Kusnadi</td>
+                           <td><a href="#">1</a></td>
+                           <td class="font-weight-600">Data Siswa</td>
                            <td>
-                              <div class="badge badge-warning">Unpaid</div>
+                              <div class="badge badge-success">Exel</div>
                            </td>
-                           <td>July 19, 2018</td>
-                           <td>
-                              <a href="#" class="btn btn-sm btn-primary">Detail</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td><a href="#">INV-48574</a></td>
-                           <td class="font-weight-600">Hasan Basri</td>
-                           <td>
-                              <div class="badge badge-success">Paid</div>
-                           </td>
-                           <td>July 21, 2018</td>
                            <td>
                               <a href="#" class="btn btn-sm btn-primary">Detail</a>
                            </td>
                         </tr>
                         <tr>
-                           <td><a href="#">INV-76824</a></td>
-                           <td class="font-weight-600">Muhamad Nuruzzaki</td>
+                           <td><a href="#">2</a></td>
+                           <td class="font-weight-600">Data Raport</td>
                            <td>
-                              <div class="badge badge-warning">Unpaid</div>
+                              <div class="badge badge-success">Excel</div>
                            </td>
-                           <td>July 22, 2018</td>
-                           <td>
-                              <a href="#" class="btn btn-sm btn-primary">Detail</a>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td><a href="#">INV-84990</a></td>
-                           <td class="font-weight-600">Agung Ardiansyah</td>
-                           <td>
-                              <div class="badge badge-warning">Unpaid</div>
-                           </td>
-                           <td>July 22, 2018</td>
                            <td>
                               <a href="#" class="btn btn-sm btn-primary">Detail</a>
                            </td>
                         </tr>
                         <tr>
-                           <td><a href="#">INV-87320</a></td>
-                           <td class="font-weight-600">Ardian Rahardiansyah</td>
+                           <td><a href="#">3</a></td>
+                           <td class="font-weight-600">Data Ujian Sekolah</td>
                            <td>
-                              <div class="badge badge-success">Paid</div>
+                              <div class="badge badge-success">Excel</div>
                            </td>
-                           <td>July 28, 2018</td>
+                           <td>
+                              <a href="#" class="btn btn-sm btn-primary">Detail</a>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td><a href="#">4</a></td>
+                           <td class="font-weight-600">Data Ujian Praktik</td>
+                           <td>
+                              <div class="badge badge-success">Excel</div>
+                           </td>
                            <td>
                               <a href="#" class="btn btn-sm btn-primary">Detail</a>
                            </td>
@@ -197,15 +170,12 @@
             </div>
          </div>
       </div>
-      <div class="col-xl-4">
+      <div class="col-xl-7">
          <div class="card">
             <div class="card-header border-0">
                <div class="row align-items-center">
                   <div class="col">
-                     <h3 class="mb-0">Social traffic</h3>
-                  </div>
-                  <div class="col text-right">
-                     <a href="#!" class="btn btn-sm btn-primary">See all</a>
+                     <h3 class="mb-0">Progress Koleksi Data</h3>
                   </div>
                </div>
             </div>
@@ -214,16 +184,20 @@
                <table class="table align-items-center table-flush">
                   <thead class="thead-light">
                      <tr>
-                        <th scope="col">Referral</th>
-                        <th scope="col">Visitors</th>
+                        <th scope="col">Aspek</th>
+                        <th scope="col">Input</th>
+                        <th scope="col">Total</th>
                         <th scope="col"></th>
                      </tr>
                   </thead>
                   <tbody>
                      <tr>
                         <th scope="row">
-                           Facebook
+                           Data Siswa
                         </th>
+                        <td>
+                           1,480
+                        </td>
                         <td>
                            1,480
                         </td>
@@ -241,10 +215,13 @@
                      </tr>
                      <tr>
                         <th scope="row">
-                           Facebook
+                           Nilai Raport
                         </th>
                         <td>
                            5,480
+                        </td>
+                        <td>
+                           1,480
                         </td>
                         <td>
                            <div class="d-flex align-items-center">
@@ -260,10 +237,13 @@
                      </tr>
                      <tr>
                         <th scope="row">
-                           Google
+                           Nilai Ujian Sekolah
                         </th>
                         <td>
                            4,807
+                        </td>
+                        <td>
+                           1,480
                         </td>
                         <td>
                            <div class="d-flex align-items-center">
@@ -279,10 +259,13 @@
                      </tr>
                      <tr>
                         <th scope="row">
-                           Instagram
+                           Nilai Ujian Praktik
                         </th>
                         <td>
                            3,678
+                        </td>
+                        <td>
+                           1,480
                         </td>
                         <td>
                            <div class="d-flex align-items-center">
@@ -298,10 +281,13 @@
                      </tr>
                      <tr>
                         <th scope="row">
-                           twitter
+                           Nilai Akhir
                         </th>
                         <td>
                            2,645
+                        </td>
+                        <td>
+                           1,480
                         </td>
                         <td>
                            <div class="d-flex align-items-center">

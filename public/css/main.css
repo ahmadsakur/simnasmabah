@@ -220,7 +220,7 @@ iframe {
 }
 
 .wrap-login100 {
-    /* width: 390px; */
+    width: inherit;
     background: #fff;
     border-radius: 10px;
     overflow: hidden;
