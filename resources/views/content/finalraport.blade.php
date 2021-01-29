@@ -15,8 +15,8 @@
                </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-               <button type="button" class="btn btn-sm btn-neutral"><i
-                     class="fas fa-redo-alt"></i><span>Refresh</span></button>
+               <a href="{{route('refreshraport')}}" class="btn btn-sm btn-neutral"><i
+                     class="fas fa-redo-alt"></i><span>Refresh</span></a>
             </div>
          </div>
       </div>
@@ -61,23 +61,23 @@
                   <tbody>
                      @forelse($finalsciences as $science)
                      <tr>
-                        <td> {{ $science->Nama }} </td>
+                        <td> {{ $science->nama }} </td>
                         <td> {{ $science->Kelas }} </td>
-                        <td> {{ substr("$science->AGAMA",0,5) }}</td>
-                        <td> {{ $science->PPKN }}</td>
-                        <td> {{ $science->INDO }}</td>
-                        <td> {{ $science->MTK }}</td>
-                        <td> {{ $science->SEJARAH }}</td>
-                        <td> {{ $science->EN }}</td>
-                        <td> {{ $science->SENI }}</td>
+                        <td> {{ substr("$science->agama",0,5) }}</td>
+                        <td> {{ $science->PPKn }}</td>
+                        <td> {{ $science->bahasa_indonesia }}</td>
+                        <td> {{ $science->matematika }}</td>
+                        <td> {{ $science->sejarah_indonesia }}</td>
+                        <td> {{ $science->bahasa_inggris }}</td>
+                        <td> {{ $science->seni_budaya }}</td>
                         <td> {{ $science->PJOK }}</td>
                         <td> {{ $science->PKWU }}</td>
-                        <td> {{ $science->JAWA }}</td>
-                        <td> {{ $science->MTK2 }}</td>
-                        <td> {{ $science->BIO }}</td>
-                        <td> {{ $science->FIS }}</td>
-                        <td> {{ $science->KIM }}</td>
-                        <td> {{ $science->PEMINATAN }}</td>
+                        <td> {{ $science->bahasa_jawa }}</td>
+                        <td> {{ $science->jurusan1 }}</td>
+                        <td> {{ $science->jurusan2 }}</td>
+                        <td> {{ $science->jurusan3 }}</td>
+                        <td> {{ $science->jurusan4 }}</td>
+                        <td> {{ $science->peminatan }}</td>
                      </tr>
                      @empty
                      <tr>

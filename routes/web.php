@@ -34,6 +34,7 @@ Route::post('/studentimport', 'App\Http\Controllers\StudentController@studentimp
 
 Route::post('/resetraport', 'App\Http\Controllers\RaportController@resetraport')->name('resetraport');
 Route::post('/raportimport', 'App\Http\Controllers\RaportController@raportimport')->name('raportimport');
+Route::get('/refreshraport', 'App\Http\Controllers\FinalRaportController@refreshraport')->name('refreshraport');
 
 Route::post('/resetujiansekolah', 'App\Http\Controllers\UjianSekolahController@resetujiansekolah')->name('resetujiansekolah');
 Route::post('/ujiansekolahimport', 'App\Http\Controllers\UjianSekolahController@ujiansekolahimport')->name('ujiansekolahimport');
