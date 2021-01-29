@@ -6,7 +6,7 @@
       <div class="header-body">
          <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
-               <h6 class="h2 text-white d-inline-block mb-0">Raport Siswa</h6>
+               <h6 class="h2 text-white d-inline-block mb-0">Ujian Sekolah</h6>
                <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                   <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                      <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
@@ -16,10 +16,10 @@
             </div>
             <div class="col-lg-6 col-5 text-right">
                <button class="btn btn-sm btn-success" type="button" data-toggle="modal"
-                  data-target="#uploadRaportModal"><i class="fa fa-file-excel"
+                  data-target="#uploadUjianSekolahModal"><i class="fa fa-file-excel"
                      aria-hidden="true"></i><span>Upload</span></button>
                <button type="button" class="btn btn-sm btn-danger" id="resetRaportButton" data-toggle="modal"
-                  data-target="#resetRaportModal"><i class="fas fa-redo-alt"></i><span>Reset</span></button>
+                  data-target="#resetUjianSekolahModal"><i class="fas fa-redo-alt"></i><span>Reset</span></button>
             </div>
          </div>
       </div>
@@ -44,7 +44,6 @@
                      <tr>
                         <th>Nama</th>
                         <th>Kelas</th>
-                        <th>Semester</th>
                         <th>AGM</th>
                         <th>PPKn</th>
                         <th>IND</th>
@@ -67,7 +66,6 @@
                      <tr>
                         <td> {{ $science->nama }} </td>
                         <td> {{ $science->Kelas }} </td>
-                        <td> {{ $science->semester }} </td>
                         <td> {{ $science->agama }}</td>
                         <td> {{ $science->PPKn }}</td>
                         <td> {{ $science->bahasa_indonesia }}</td>
@@ -86,7 +84,7 @@
                      </tr>
                      @empty
                      <tr>
-                        <td colspan="18" align="center">Data Nilai Tidak diTemukan</td>
+                        <td colspan="17" align="center">Data Nilai Tidak diTemukan</td>
                      </tr>
                      @endforelse
                   </tbody>
@@ -107,7 +105,6 @@
                      <tr>
                         <th>Nama</th>
                         <th>Kelas</th>
-                        <th>Semester</th>
                         <th>AGM</th>
                         <th>PPKn</th>
                         <th>IND</th>
@@ -130,7 +127,6 @@
                      <tr>
                         <td> {{ $social->nama }} </td>
                         <td> {{ $social->Kelas }} </td>
-                        <td> {{ $social->semester }} </td>
                         <td> {{ $social->agama }}</td>
                         <td> {{ $social->PPKn }}</td>
                         <td> {{ $social->bahasa_indonesia }}</td>
@@ -149,7 +145,7 @@
                      </tr>
                      @empty
                      <tr>
-                        <td colspan="18" align="center">Data Nilai Tidak diTemukan</td>
+                        <td colspan="17" align="center">Data Nilai Tidak diTemukan</td>
                      </tr>
                      @endforelse
                   </tbody>
@@ -160,21 +156,21 @@
    </div>
    <!-- Modal -->
    <!-- Upload Modal -->
-   <div class="modal fade" id="uploadRaportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+   <div class="modal fade" id="uploadUjianSekolahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
          <div class="modal-content">
             <div class="modal-header">
-               <h5 class="modal-title" id="exampleModalLabel">Upload Data Raport</h5>
+               <h5 class="modal-title" id="exampleModalLabel">Upload Data Ujian</h5>
                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                </button>
             </div>
-            <form role="form" action="{{route('raportimport')}}" method="POST" enctype="multipart/form-data">
+            <form role="form" action="{{route('ujiansekolahimport')}}" method="POST" enctype="multipart/form-data">
                @csrf
 
                <div class="modal-body">
-                  <h3>Pilih Dataset Raport</h3>
+                  <h3>Pilih Dataset Ujian</h3>
                   <input type="file" class="form-control" name="file" required>
                </div>
                <div class="modal-footer">
@@ -186,17 +182,17 @@
       </div>
    </div>
    <!-- Reset Modal -->
-   <div class="modal fade" id="resetRaportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+   <div class="modal fade" id="resetUjianSekolahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
          <div class="modal-content">
             <div class="modal-header">
-               <h5 class="modal-title" id="exampleModalLabel">Reset Data Raport</h5>
+               <h5 class="modal-title" id="exampleModalLabel">Reset Data Ujian Sekolah</h5>
                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                </button>
             </div>
-            <form role="form" action="{{ route('resetraport') }}" method="POST">
+            <form role="form" action="{{route('resetujiansekolah')}}" method="POST">
                @csrf
 
                <div class="modal-body">

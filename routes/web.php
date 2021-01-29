@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// })->name('home');
-
 Auth::routes();
 Route::match(['get', 'post'], 'register', function () {
     return redirect('/');
@@ -30,6 +26,7 @@ Route::middleware('role:admin')->resource('guru', App\Http\Controllers\WaliKelas
 Route::middleware('role:admin')->resource('siswa', App\Http\Controllers\StudentController::class);
 Route::middleware('role:admin')->resource('raport', App\Http\Controllers\RaportController::class);
 Route::middleware('role:admin')->resource('finalraport', App\Http\Controllers\FinalRaportController::class);
+Route::middleware('role:admin')->resource('ujiansekolah', App\Http\Controllers\UjianSekolahController::class);
 
 Route::post('/resetsiswa', 'App\Http\Controllers\StudentController@resetsiswa')->name('resetsiswa');
 Route::get('/studentexport', 'App\Http\Controllers\StudentController@studentexport')->name('studentexport');
@@ -37,3 +34,6 @@ Route::post('/studentimport', 'App\Http\Controllers\StudentController@studentimp
 
 Route::post('/resetraport', 'App\Http\Controllers\RaportController@resetraport')->name('resetraport');
 Route::post('/raportimport', 'App\Http\Controllers\RaportController@raportimport')->name('raportimport');
+
+Route::post('/resetujiansekolah', 'App\Http\Controllers\UjianSekolahController@resetujiansekolah')->name('resetujiansekolah');
+Route::post('/ujiansekolahimport', 'App\Http\Controllers\UjianSekolahController@ujiansekolahimport')->name('ujiansekolahimport');

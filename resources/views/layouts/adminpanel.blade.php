@@ -82,7 +82,7 @@
                               <a href="/raport" class="nav-link">Raport</a>
                            </li>
                            <li class="nav-item">
-                              <a href="#" class="nav-link">Ujian Sekolah</a>
+                              <a href="/ujiansekolah" class="nav-link">Ujian Sekolah</a>
                            </li>
                            <li class="nav-item">
                               <a href="#" class="nav-link">Ujian Praktek</a>
