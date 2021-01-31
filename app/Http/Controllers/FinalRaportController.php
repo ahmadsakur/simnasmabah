@@ -94,10 +94,10 @@ class FinalRaportController extends Controller
 
     public function refreshraport()
     {
-        //hapus tabel
+        //reset tabel final_raport
         DB::table('final_raport')->delete();
 
-        //buat query agregat
+        //buat query agregat dari tabel raport
         $agregat = DB::table('raports')
             ->select(
                 'NIS',
@@ -120,10 +120,10 @@ class FinalRaportController extends Controller
             ->groupBy('NIS')
             ->get();
 
-        // $query = (array) $agregat;
+        // konversi query ke array
         $query = json_decode(json_encode($agregat), true);
 
-        //insert ke tabel final raport
+        //insert array ke tabel final raport
         finalRaport::insert($query);
 
         //return ke view

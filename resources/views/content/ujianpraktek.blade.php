@@ -6,7 +6,7 @@
       <div class="header-body">
          <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
-               <h6 class="h2 text-white d-inline-block mb-0">Ujian Sekolah</h6>
+               <h6 class="h2 text-white d-inline-block mb-0">Ujian Praktek</h6>
                <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
                   <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
                      <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
@@ -16,10 +16,10 @@
             </div>
             <div class="col-lg-6 col-5 text-right">
                <button class="btn btn-sm btn-success" type="button" data-toggle="modal"
-                  data-target="#uploadUjianSekolahModal"><i class="fa fa-file-excel"
+                  data-target="#uploadUjianPraktekModal"><i class="fa fa-file-excel"
                      aria-hidden="true"></i><span>Upload</span></button>
-               <button type="button" class="btn btn-sm btn-danger" id="resetUSButton" data-toggle="modal"
-                  data-target="#resetUjianSekolahModal"><i class="fas fa-redo-alt"></i><span>Reset</span></button>
+               <button type="button" class="btn btn-sm btn-danger" id="resetUPButton" data-toggle="modal"
+                  data-target="#resetUjianPraktekModal"><i class="fas fa-redo-alt"></i><span>Reset</span></button>
             </div>
          </div>
       </div>
@@ -45,20 +45,15 @@
                         <th>Nama</th>
                         <th>Kelas</th>
                         <th>AGM</th>
-                        <th>PPKn</th>
-                        <th>IND</th>
-                        <th>MTK</th>
-                        <th>SEJ</th>
-                        <th>EN</th>
+                        <th>INDO</th>
+                        <th>EN</>
+                        <th>JAWA</th>
                         <th>SENI</th>
                         <th>PJOK</th>
-                        <th>PRAK</th>
-                        <th>JAWA</th>
-                        <th>MTK</th>
+                        <th>PKWU</th>
                         <th>BIO</th>
                         <th>FIS</th>
                         <th>KIM</th>
-                        <th>Peminatan</th>
                      </tr>
                   </thead>
                   <tbody>
@@ -67,24 +62,19 @@
                         <td> {{ $science->nama }} </td>
                         <td> {{ $science->Kelas }} </td>
                         <td> {{ $science->agama }}</td>
-                        <td> {{ $science->PPKn }}</td>
                         <td> {{ $science->bahasa_indonesia }}</td>
-                        <td> {{ $science->matematika }}</td>
-                        <td> {{ $science->sejarah_indonesia }}</td>
                         <td> {{ $science->bahasa_inggris }}</td>
+                        <td> {{ $science->bahasa_jawa }}</td>
                         <td> {{ $science->seni_budaya }}</td>
                         <td> {{ $science->PJOK }}</td>
                         <td> {{ $science->PKWU }}</td>
-                        <td> {{ $science->bahasa_jawa }}</td>
-                        <td> {{ $science->jurusan1 }}</td>
                         <td> {{ $science->jurusan2 }}</td>
                         <td> {{ $science->jurusan3 }}</td>
                         <td> {{ $science->jurusan4 }}</td>
-                        <td> {{ $science->peminatan }}</td>
                      </tr>
                      @empty
                      <tr>
-                        <td colspan="17" align="center">Data Nilai Tidak diTemukan</td>
+                        <td colspan="12" align="center">Data Nilai tidak di temukan</td>
                      </tr>
                      @endforelse
                   </tbody>
@@ -106,20 +96,12 @@
                         <th>Nama</th>
                         <th>Kelas</th>
                         <th>AGM</th>
-                        <th>PPKn</th>
-                        <th>IND</th>
-                        <th>MTK</th>
-                        <th>SEJ</th>
-                        <th>EN</th>
+                        <th>INDO</th>
+                        <th>EN</>
+                        <th>JAWA</th>
                         <th>SENI</th>
                         <th>PJOK</th>
-                        <th>PRAK</th>
-                        <th>JAWA</th>
-                        <th>GEO</th>
-                        <th>SEJ</th>
-                        <th>SOS</th>
-                        <th>EKO</th>
-                        <th>Peminatan</th>
+                        <th>PKWU</th>
                      </tr>
                   </thead>
                   <tbody>
@@ -128,24 +110,16 @@
                         <td> {{ $social->nama }} </td>
                         <td> {{ $social->Kelas }} </td>
                         <td> {{ $social->agama }}</td>
-                        <td> {{ $social->PPKn }}</td>
                         <td> {{ $social->bahasa_indonesia }}</td>
-                        <td> {{ $social->matematika }}</td>
-                        <td> {{ $social->sejarah_indonesia }}</td>
                         <td> {{ $social->bahasa_inggris }}</td>
+                        <td> {{ $social->bahasa_jawa }}</td>
                         <td> {{ $social->seni_budaya }}</td>
                         <td> {{ $social->PJOK }}</td>
                         <td> {{ $social->PKWU }}</td>
-                        <td> {{ $social->bahasa_jawa }}</td>
-                        <td> {{ $social->jurusan1 }}</td>
-                        <td> {{ $social->jurusan2 }}</td>
-                        <td> {{ $social->jurusan3 }}</td>
-                        <td> {{ $social->jurusan4 }}</td>
-                        <td> {{ $social->peminatan }}</td>
                      </tr>
                      @empty
                      <tr>
-                        <td colspan="17" align="center">Data Nilai Tidak diTemukan</td>
+                        <td colspan="17" align="center">Data Nilai tidak di temukan</td>
                      </tr>
                      @endforelse
                   </tbody>
@@ -156,7 +130,7 @@
    </div>
    <!-- Modal -->
    <!-- Upload Modal -->
-   <div class="modal fade" id="uploadUjianSekolahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+   <div class="modal fade" id="uploadUjianPraktekModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
          <div class="modal-content">
@@ -166,7 +140,7 @@
                   <span aria-hidden="true">&times;</span>
                </button>
             </div>
-            <form role="form" action="{{route('ujiansekolahimport')}}" method="POST" enctype="multipart/form-data">
+            <form role="form" action="{{route('ujianpraktekimport')}}" method="POST" enctype="multipart/form-data">
                @csrf
 
                <div class="modal-body">
@@ -182,17 +156,17 @@
       </div>
    </div>
    <!-- Reset Modal -->
-   <div class="modal fade" id="resetUjianSekolahModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+   <div class="modal fade" id="resetUjianPraktekModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
          <div class="modal-content">
             <div class="modal-header">
-               <h5 class="modal-title" id="exampleModalLabel">Reset Data Ujian Sekolah</h5>
+               <h5 class="modal-title" id="exampleModalLabel">Reset Data Ujian Praktek</h5>
                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                </button>
             </div>
-            <form role="form" action="{{route('resetujiansekolah')}}" method="POST">
+            <form role="form" action="{{route('resetujianpraktek')}}" method="POST">
                @csrf
 
                <div class="modal-body">
@@ -226,7 +200,7 @@
    //reset modal
 
 
-   $(document).on('click','button#resetUSButton',function(){
+   $(document).on('click','button#resetUPButton',function(){
       var password = document.getElementById("resetpassword");
 
       function validatePassword(){

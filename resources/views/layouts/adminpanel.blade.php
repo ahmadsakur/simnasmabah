@@ -85,7 +85,7 @@
                               <a href="/ujiansekolah" class="nav-link">Ujian Sekolah</a>
                            </li>
                            <li class="nav-item">
-                              <a href="#" class="nav-link">Ujian Praktek</a>
+                              <a href="/ujianpraktek" class="nav-link">Ujian Praktek</a>
                            </li>
                         </ul>
                      </div>

@@ -27,14 +27,20 @@ Route::middleware('role:admin')->resource('siswa', App\Http\Controllers\StudentC
 Route::middleware('role:admin')->resource('raport', App\Http\Controllers\RaportController::class);
 Route::middleware('role:admin')->resource('finalraport', App\Http\Controllers\FinalRaportController::class);
 Route::middleware('role:admin')->resource('ujiansekolah', App\Http\Controllers\UjianSekolahController::class);
+Route::middleware('role:admin')->resource('ujianpraktek', App\Http\Controllers\UjianPraktekController::class);
 
-Route::post('/resetsiswa', 'App\Http\Controllers\StudentController@resetsiswa')->name('resetsiswa');
-Route::get('/studentexport', 'App\Http\Controllers\StudentController@studentexport')->name('studentexport');
-Route::post('/studentimport', 'App\Http\Controllers\StudentController@studentimport')->name('studentimport');
+Route::middleware('role:admin')->group(function () {
+    Route::post('/resetsiswa', 'App\Http\Controllers\StudentController@resetsiswa')->name('resetsiswa');
+    Route::get('/studentexport', 'App\Http\Controllers\StudentController@studentexport')->name('studentexport');
+    Route::post('/studentimport', 'App\Http\Controllers\StudentController@studentimport')->name('studentimport');
 
-Route::post('/resetraport', 'App\Http\Controllers\RaportController@resetraport')->name('resetraport');
-Route::post('/raportimport', 'App\Http\Controllers\RaportController@raportimport')->name('raportimport');
-Route::get('/refreshraport', 'App\Http\Controllers\FinalRaportController@refreshraport')->name('refreshraport');
+    Route::post('/resetraport', 'App\Http\Controllers\RaportController@resetraport')->name('resetraport');
+    Route::post('/raportimport', 'App\Http\Controllers\RaportController@raportimport')->name('raportimport');
+    Route::get('/refreshraport', 'App\Http\Controllers\FinalRaportController@refreshraport')->name('refreshraport');
 
-Route::post('/resetujiansekolah', 'App\Http\Controllers\UjianSekolahController@resetujiansekolah')->name('resetujiansekolah');
-Route::post('/ujiansekolahimport', 'App\Http\Controllers\UjianSekolahController@ujiansekolahimport')->name('ujiansekolahimport');
+    Route::post('/resetujiansekolah', 'App\Http\Controllers\UjianSekolahController@resetujiansekolah')->name('resetujiansekolah');
+    Route::post('/ujiansekolahimport', 'App\Http\Controllers\UjianSekolahController@ujiansekolahimport')->name('ujiansekolahimport');
+
+    Route::post('/resetujianpraktek', 'App\Http\Controllers\UjianPraktekController@resetujianpraktek')->name('resetujianpraktek');
+    Route::post('/ujianpraktekimport', 'App\Http\Controllers\UjianPraktekController@ujianpraktekimport')->name('ujianpraktekimport');
+});

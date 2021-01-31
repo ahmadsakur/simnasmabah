@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\UjianPraktekImport;
 use App\Models\ujianPraktek;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UjianPraktekController extends Controller
 {
@@ -15,6 +18,18 @@ class UjianPraktekController extends Controller
     public function index()
     {
         //
+        $sciences = DB::table('ujian_praktek')
+            ->join('students', 'ujian_praktek.NIS', '=', 'students.NIS')
+            ->select('ujian_praktek.*', 'students.nama', 'students.Kelas')
+            ->where('students.Kelas', 'like', 'MIPA%')
+            ->get();
+
+        $socials = DB::table('ujian_praktek')
+            ->join('students', 'ujian_praktek.NIS', '=', 'students.NIS')
+            ->select('ujian_praktek.*', 'students.nama', 'students.Kelas')
+            ->where('students.Kelas', 'like', 'IPS%')
+            ->get();
+        return view('content.ujianpraktek', compact('sciences', 'socials'));
     }
 
     /**
@@ -81,5 +96,21 @@ class UjianPraktekController extends Controller
     public function destroy(ujianPraktek $ujianPraktek)
     {
         //
+    }
+
+    public function resetujianpraktek(Request $request)
+    {
+        DB::table('ujian_sekolah')->delete();
+        return redirect('/ujianpraktek')->with('toast_success', 'Tabel Berhasil direset');
+    }
+
+    public function ujianpraktekimport(Request $request)
+    {
+        $file = $request->file('file');
+        $namaFile = $file->getClientOriginalName();
+        $file->move('Dataset', $namaFile);
+
+        Excel::import(new UjianPraktekImport, public_path('/Dataset/' . $namaFile));
+        return redirect('/ujianpraktek')->with('toast_success', 'Dataset Ujian berhasil di upload');
     }
 }
