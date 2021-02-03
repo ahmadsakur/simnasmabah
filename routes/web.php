@@ -43,4 +43,8 @@ Route::middleware('role:admin')->group(function () {
 
     Route::post('/resetujianpraktek', 'App\Http\Controllers\UjianPraktekController@resetujianpraktek')->name('resetujianpraktek');
     Route::post('/ujianpraktekimport', 'App\Http\Controllers\UjianPraktekController@ujianpraktekimport')->name('ujianpraktekimport');
+
+    Route::patch('/updateadmin', 'App\Http\Controllers\HomeController@updateAdmin')->name('updateAdmin');
 });
+
+Route::middleware('auth')->resource('settings', App\Http\Controllers\SettingsController::class);

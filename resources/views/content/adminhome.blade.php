@@ -16,8 +16,11 @@
                </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-               <a href="#" class="btn btn-sm btn-neutral">New</a>
-               <a href="#" class="btn btn-sm btn-neutral">Filters</a>
+               <button type="button" data-id="{{Auth::user()->id}}" data-name="{{Auth::user()->name}}"
+                  data-email="{{Auth::user()->email}}" data-toggle="modal" data-target="#accountModal"
+                  class="btn btn-sm btn-neutral" id="editAdminButton">Account</button>
+               <button type="button" id="editSettingsButton" data-toggle="modal" data-target="#settingsModal"
+                  data-id="{{$settings->id}}" class="btn btn-sm btn-neutral">Settings</button>
             </div>
          </div>
          <!-- Card stats -->
@@ -28,7 +31,7 @@
                   <div class="card-body">
                      <div class="row">
                         <div class="col">
-                           <h5 class="card-title text-uppercase text-muted mb-0">Total traffic</h5>
+                           <h5 class="card-title text-uppercase text-muted mb-0">Jumlah Siswa</h5>
                            <span class="h2 font-weight-bold mb-0">350,897</span>
                         </div>
                         <div class="col-auto">
@@ -46,7 +49,7 @@
                   <div class="card-body">
                      <div class="row">
                         <div class="col">
-                           <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
+                           <h5 class="card-title text-uppercase text-muted mb-0">Wali Kelas</h5>
                            <span class="h2 font-weight-bold mb-0">2,356</span>
                         </div>
                         <div class="col-auto">
@@ -64,7 +67,7 @@
                   <div class="card-body">
                      <div class="row">
                         <div class="col">
-                           <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
+                           <h5 class="card-title text-uppercase text-muted mb-0">Data X</h5>
                            <span class="h2 font-weight-bold mb-0">924</span>
                         </div>
                         <div class="col-auto">
@@ -82,7 +85,7 @@
                   <div class="card-body">
                      <div class="row">
                         <div class="col">
-                           <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
+                           <h5 class="card-title text-uppercase text-muted mb-0">Data Y</h5>
                            <span class="h2 font-weight-bold mb-0">49,65%</span>
                         </div>
                         <div class="col-auto">
@@ -175,138 +178,235 @@
             <div class="card-header border-0">
                <div class="row align-items-center">
                   <div class="col">
-                     <h3 class="mb-0">Progress Koleksi Data</h3>
+                     <h3 class="mb-0">gatau diisi apa</h3>
                   </div>
                </div>
-            </div>
-            <div class="table-responsive">
-               <!-- Projects table -->
-               <table class="table align-items-center table-flush">
-                  <thead class="thead-light">
-                     <tr>
-                        <th scope="col">Aspek</th>
-                        <th scope="col">Input</th>
-                        <th scope="col">Total</th>
-                        <th scope="col"></th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <th scope="row">
-                           Data Siswa
-                        </th>
-                        <td>
-                           1,480
-                        </td>
-                        <td>
-                           1,480
-                        </td>
-                        <td>
-                           <div class="d-flex align-items-center">
-                              <span class="mr-2">60%</span>
-                              <div>
-                                 <div class="progress">
-                                    <div class="progress-bar bg-gradient-danger" role="progressbar" aria-valuenow="60"
-                                       aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </td>
-                     </tr>
-                     <tr>
-                        <th scope="row">
-                           Nilai Raport
-                        </th>
-                        <td>
-                           5,480
-                        </td>
-                        <td>
-                           1,480
-                        </td>
-                        <td>
-                           <div class="d-flex align-items-center">
-                              <span class="mr-2">70%</span>
-                              <div>
-                                 <div class="progress">
-                                    <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="70"
-                                       aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </td>
-                     </tr>
-                     <tr>
-                        <th scope="row">
-                           Nilai Ujian Sekolah
-                        </th>
-                        <td>
-                           4,807
-                        </td>
-                        <td>
-                           1,480
-                        </td>
-                        <td>
-                           <div class="d-flex align-items-center">
-                              <span class="mr-2">80%</span>
-                              <div>
-                                 <div class="progress">
-                                    <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="80"
-                                       aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </td>
-                     </tr>
-                     <tr>
-                        <th scope="row">
-                           Nilai Ujian Praktik
-                        </th>
-                        <td>
-                           3,678
-                        </td>
-                        <td>
-                           1,480
-                        </td>
-                        <td>
-                           <div class="d-flex align-items-center">
-                              <span class="mr-2">75%</span>
-                              <div>
-                                 <div class="progress">
-                                    <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="75"
-                                       aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </td>
-                     </tr>
-                     <tr>
-                        <th scope="row">
-                           Nilai Akhir
-                        </th>
-                        <td>
-                           2,645
-                        </td>
-                        <td>
-                           1,480
-                        </td>
-                        <td>
-                           <div class="d-flex align-items-center">
-                              <span class="mr-2">30%</span>
-                              <div>
-                                 <div class="progress">
-                                    <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="30"
-                                       aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
-                                 </div>
-                              </div>
-                           </div>
-                        </td>
-                     </tr>
-                  </tbody>
-               </table>
             </div>
          </div>
       </div>
    </div> <!-- Row -->
+   <!-- akun modal -->
+   <div class="modal fade" id="accountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Pengaturan Akun</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <form role="form" action="{{route('updateAdmin')}}" method="POST">
+               @method('PATCH')
+               @csrf
+               <div class="modal-body">
+                  <input type="hidden" name="id" id="edit-id">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <div class="form-group">
+                           <label for="name">Nama</label>
+                           <div class="input-group input-group-merge">
+                              <div class="input-group-prepend">
+                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
+                              </div>
+                              <input class="form-control" placeholder="Nama Lengkap" type="text" name="name"
+                                 id="edit-name" required autocomplete="off">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="form-group">
+                           <label for="email">Email</label>
+                           <div class="input-group input-group-merge">
+                              <div class="input-group-prepend">
+                                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                              </div>
+                              <input class="form-control" placeholder="Email" type="email" name="email" id="edit-email"
+                                 required>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-6">
+                        <label for="password">Password</label>
+                        <div class="form-group">
+                           <div class="input-group input-group-merge">
+                              <div class="input-group-prepend">
+                                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                              </div>
+                              <input class="form-control" placeholder="Password" type="password" name="password"
+                                 id="password" required>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <label for="confirmPassword">Konfirmasi Password</label>
+                        <div class="form-group">
+                           <div class="input-group input-group-merge">
+                              <div class="input-group-prepend">
+                                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                              </div>
+                              <input class="form-control" placeholder="Password" type="password" name="confirmPassword"
+                                 id="confirmPassword" required>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-primary">Update</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+   <!-- settings modal -->
+   <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Pengaturan Sistem</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <form role="form" action="{{route('settings.update','update')}}" method="POST">
+               @method('PATCH')
+               @csrf
+               <div class="modal-body">
+                  <input type="hidden" name="id" id="settings-id">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <label for="kepsek">Kepala Sekolah</label>
+                        <div class="form-group">
+                           <div class="input-group input-group-merge">
+                              <div class="input-group-prepend">
+                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
+                              </div>
+                              <input class="form-control" placeholder="Kepala Sekolah" type="text" name="kepsek"
+                                 id="settings-kepsek" required>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-8">
+                        <div class="form-group">
+                           <label for="NIP">NIP</label>
+                           <div class="input-group input-group-merge">
+                              <div class="input-group-prepend">
+                                 <span class="input-group-text"><i class="fa fa-id-badge"></i></span>
+                              </div>
+                              <input class="form-control" placeholder="Nomor Induk Pegawai" type="text" name="NIP"
+                                 id="settings-NIP" required>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="form-group">
+                           <label for="KKM">KKM</label>
+                           <div class="input-group input-group-merge">
+                              <div class="input-group-prepend">
+                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
+                              </div>
+                              <input class="form-control" placeholder="Batas KKM" type="number" min="0" max="100"
+                                 name="KKM" id="settings-KKM" required>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-6">
+                        <label for="presentase-US">Presentase Ujian Sekolah</label>
+                        <div class="form-group">
+                           <div class="input-group input-group-merge">
+                              <div class="input-group-prepend">
+                                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                              </div>
+                              <input class="form-control" placeholder="% Ujian Sekolah" type="number" min="0" max="100"
+                                 name="presentase-US" id="settings-US">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <label for="presentase-UP">Presentase Ujian Praktek</label>
+                        <div class="form-group">
+                           <div class="input-group input-group-merge">
+                              <div class="input-group-prepend">
+                                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                              </div>
+                              <input class="form-control" placeholder="$ Ujian Praktek" type="number" min="0" max="100"
+                                 name="presentase-UP" id="settings-UP">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-primary">Update</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+   <!-- end of modal-->
 </div>
 
 @endsection
+
+@push('customscripts')
+<script>
+   var password = document.getElementById("password");
+   var confirm_password = document.getElementById("confirmPassword");
+
+   function validatePassword(){
+      if(password.value != confirm_password.value) {
+         confirm_password.setCustomValidity("Passwords Don't Match");
+      } else {
+         confirm_password.setCustomValidity('');
+      }
+   }
+
+   password.onchange = validatePassword;
+   confirm_password.onkeyup = validatePassword;
+
+// edit akun modal
+$(document).on('click','button#editAdminButton',function(){
+   let id = $(this).data('id');
+   // native js way
+   let name = $(this).data('name');
+   let email = $(this).data('email');
+  
+   $('#edit-id').val(id);
+   $('#edit-name').val(name);
+   $('#edit-email').val(email);
+   
+});
+
+//edit setting modal
+$(document).on('click','button#editSettingsButton',function(){
+   let id = $(this).data('id');
+   $.ajax({
+      type: "get",
+      url: 'settings/'+id,
+      dataType: 'json',
+      success: function(res){         
+         $('#settings-id').val(res[0].id);
+         $('#settings-kepsek').val(res[0].kepala_sekolah);
+         $('#settings-KKM').val(res[0].KKM);
+         $('#settings-NIP').val(res[0].NIP);
+         $('#settings-US').val(res[0].presentase_US);
+         $('#settings-UP').val(res[0].presentase_UP);
+         
+      }
+
+   })
+});
+
+
+</script>
+@endpush

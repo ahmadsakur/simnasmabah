@@ -142,15 +142,15 @@
                         </div>
                      </a>
                      <div class="dropdown-menu dropdown-menu-right">
-                        <a href="#!" class="dropdown-item">
+                        {{-- <button type="button" class="dropdown-item" data-toggle="modal" data-target="#accountModal">
                            <i class="ni ni-single-02"></i>
                            <span>Profile</span>
-                        </a>
-                        <a href="#!" class="dropdown-item">
+                        </button>
+                        <button type="button" class="dropdown-item" data-toggle="modal" data-target="#settingsModal">
                            <i class="ni ni-settings-gear-65"></i>
                            <span>Settings</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
+                        </button> --}}
+                        {{-- <div class="dropdown-divider"></div> --}}
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">
                            <i class="ni ni-user-run"></i>
@@ -167,6 +167,7 @@
       </nav>
       <!-- Page content -->
       @yield('content')
+
    </div>
    <!-- Argon Scripts -->
    <!-- Core -->
@@ -184,6 +185,7 @@
    <script src="argon/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
    <script src="argon/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
    <script src="argon/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
+   <script src="argon/vendor/nouislider/distribute/nouislider.min.js"></script>
    <!-- Argon JS -->
    <script src="argon/js/argon.js?v=1.1.0"></script>
    @stack('customscripts')
