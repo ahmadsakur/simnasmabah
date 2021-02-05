@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\setting;
+use App\Models\student;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,10 +30,47 @@ class HomeController extends Controller
      */
     public function admin()
     {
+        $chart = DB::table('raports')
+            ->join('students', 'raports.NIS', '=', 'students.NIS')
+            ->select(
+                DB::raw('avg(raports.agama) as AGM'),
+                DB::raw('avg(raports.PPKn) as PKN'),
+                DB::raw('avg(raports.bahasa_indonesia) as IND'),
+                DB::raw('avg(raports.matematika) as MTK'),
+                DB::raw('avg(raports.sejarah_indonesia) as SEJ'),
+                DB::raw('avg(raports.bahasa_inggris) as EN'),
+                DB::raw('avg(raports.seni_budaya) as SENI'),
+                DB::raw('avg(raports.PJOK) as PJOK'),
+                DB::raw('avg(raports.PKWU) as PKWU'),
+                DB::raw('avg(raports.bahasa_jawa) as JAWA'),
+                DB::raw('avg(raports.jurusan1) as MTK2'),
+                DB::raw('avg(raports.jurusan2) as BIO'),
+                DB::raw('avg(raports.jurusan3) as FIS'),
+                DB::raw('avg(raports.jurusan4) as KIM'),
+                DB::raw('avg(raports.peminatan) as PMT')
+            )
+            ->where('students.Kelas', 'like', 'MIPA%')
+            ->first();
 
+        $A1 = DB::table('students')
+            ->where('Kelas', 'MIPA 1')->count();
+        $A2 = DB::table('students')
+            ->where('Kelas', 'MIPA 2')->count();
+        $A3 = DB::table('students')
+            ->where('Kelas', 'MIPA 3')->count();
+        $A4 = DB::table('students')
+            ->where('Kelas', 'MIPA 4')->count();
+        $S1 = DB::table('students')
+            ->where('Kelas', 'IPS 1')->count();
+        $S2 = DB::table('students')
+            ->where('Kelas', 'IPS 2')->count();
+        $S3 = DB::table('students')
+            ->where('Kelas', 'IPS 3')->count();
+        $S4 = DB::table('students')
+            ->where('Kelas', 'IPS 4')->count();
+        $student = array($A1, $A2, $A3, $A4, $S1, $S2, $S3, $S4);
         $settings = setting::first();
-        // dd($settings->id);
-        return view('content/adminhome', compact('settings'));
+        return view('content/adminhome', compact('settings', 'chart', 'student'));
     }
 
     public function updateAdmin(Request $request)
@@ -44,6 +83,33 @@ class HomeController extends Controller
         ]);
         return redirect('/adminpanel')->with('toast_info', 'Data Berhasil diubah');;
     }
+
+    public function updateChart($id)
+    {
+        $toggler = DB::table('raports')
+            ->join('students', 'raports.NIS', '=', 'students.NIS')
+            ->select(
+                DB::raw('avg(raports.agama) as AGM'),
+                DB::raw('avg(raports.PPKn) as PKN'),
+                DB::raw('avg(raports.bahasa_indonesia) as IND'),
+                DB::raw('avg(raports.matematika) as MTK'),
+                DB::raw('avg(raports.sejarah_indonesia) as SEJ'),
+                DB::raw('avg(raports.bahasa_inggris) as EN'),
+                DB::raw('avg(raports.seni_budaya) as SENI'),
+                DB::raw('avg(raports.PJOK) as PJOK'),
+                DB::raw('avg(raports.PKWU) as PKWU'),
+                DB::raw('avg(raports.bahasa_jawa) as JAWA'),
+                DB::raw('avg(raports.jurusan1) as MTK2'),
+                DB::raw('avg(raports.jurusan2) as BIO'),
+                DB::raw('avg(raports.jurusan3) as FIS'),
+                DB::raw('avg(raports.jurusan4) as KIM'),
+                DB::raw('avg(raports.peminatan) as PMT')
+            )
+            ->where('students.Kelas', 'like', $id . '%')
+            ->first();
+        return response()->json($toggler);
+    }
+
 
     public function walikelas()
     {

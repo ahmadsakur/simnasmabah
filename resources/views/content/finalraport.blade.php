@@ -56,6 +56,7 @@
                         <th>FIS</th>
                         <th>KIM</th>
                         <th>Peminatan</th>
+                        {{-- <th>Rata Rata</th> --}}
                      </tr>
                   </thead>
                   <tbody>
@@ -78,6 +79,11 @@
                         <td> {{ $science->jurusan3 }}</td>
                         <td> {{ $science->jurusan4 }}</td>
                         <td> {{ $science->peminatan }}</td>
+                        {{-- <td> {{ substr((($science->agama + $science->PPKn + $science->bahasa_indonesia + 
+                           $science->matematika + $science->sejarah_indonesia + $science->bahasa_inggris + 
+                           $science->seni_budaya + $science->PJOK + $science->PKWU + $science->bahasa_jawa + 
+                           $science->jurusan1 + $science->jurusan2 + $science->jurusan3 + $science->jurusan4 + 
+                           $science->peminatan) / 15),0,5) }} </td> --}}
                      </tr>
                      @empty
                      <tr>

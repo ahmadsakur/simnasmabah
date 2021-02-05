@@ -186,8 +186,11 @@
    <script src="argon/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
    <script src="argon/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
    <script src="argon/vendor/nouislider/distribute/nouislider.min.js"></script>
+   <!-- Chart Js -->
+   <script src="argon/vendor/chart.js/dist/Chart.min.js"></script>
+   <script src="argon/vendor/chart.js/dist/Chart.extension.js"></script>
    <!-- Argon JS -->
-   <script src="argon/js/argon.js?v=1.1.0"></script>
+   <script src="argon/js/argon.js"></script>
    @stack('customscripts')
    @include('sweetalert::alert')
 

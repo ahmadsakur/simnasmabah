@@ -1276,50 +1276,50 @@ var PointsChart = (function () {
 
 var SalesChart = (function () {
 
-    // Variables
+    // // Variables
 
-    var $chart = $('#chart-sales-dark');
-
-
-    // Methods
-
-    function init($this) {
-        var salesChart = new Chart($this, {
-            type: 'line',
-            options: {
-                scales: {
-                    yAxes: [{
-                        gridLines: {
-                            color: Charts.colors.gray[700],
-                            zeroLineColor: Charts.colors.gray[700]
-                        },
-                        ticks: {
-
-                        }
-                    }]
-                }
-            },
-            data: {
-                labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                datasets: [{
-                    label: 'Performance',
-                    data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
-                }]
-            }
-        });
-
-        // Save to jQuery object
-
-        $this.data('chart', salesChart);
-
-    };
+    // var $chart = $('#chart-sales-dark');
 
 
-    // Events
+    // // Methods
 
-    if ($chart.length) {
-        init($chart);
-    }
+    // function init($this) {
+    //     var salesChart = new Chart($this, {
+    //         type: 'line',
+    //         options: {
+    //             scales: {
+    //                 yAxes: [{
+    //                     gridLines: {
+    //                         color: Charts.colors.gray[700],
+    //                         zeroLineColor: Charts.colors.gray[700]
+    //                     },
+    //                     ticks: {
+
+    //                     }
+    //                 }]
+    //             }
+    //         },
+    //         data: {
+    //             labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    //             datasets: [{
+    //                 label: 'Performance',
+    //                 data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
+    //             }]
+    //         }
+    //     });
+
+    //     // Save to jQuery object
+
+    //     $this.data('chart', salesChart);
+
+    // };
+
+
+    // // Events
+
+    // if ($chart.length) {
+    //     init($chart);
+    // }
 
 })();
 
@@ -1335,50 +1335,50 @@ var SalesChart = (function () {
 
 var SalesChart = (function () {
 
-    // Variables
+    // // Variables
 
-    var $chart = $('#chart-sales');
-
-
-    // Methods
-
-    function init($this) {
-        var salesChart = new Chart($this, {
-            type: 'line',
-            options: {
-                scales: {
-                    yAxes: [{
-                        gridLines: {
-                            color: Charts.colors.gray[200],
-                            zeroLineColor: Charts.colors.gray[200]
-                        },
-                        ticks: {
-
-                        }
-                    }]
-                }
-            },
-            data: {
-                labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                datasets: [{
-                    label: 'Performance',
-                    data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
-                }]
-            }
-        });
-
-        // Save to jQuery object
-
-        $this.data('chart', salesChart);
-
-    };
+    // var $chart = $('#chart-sales');
 
 
-    // Events
+    // // Methods
 
-    if ($chart.length) {
-        init($chart);
-    }
+    // function init($this) {
+    //     var salesChart = new Chart($this, {
+    //         type: 'line',
+    //         options: {
+    //             scales: {
+    //                 yAxes: [{
+    //                     gridLines: {
+    //                         color: Charts.colors.gray[200],
+    //                         zeroLineColor: Charts.colors.gray[200]
+    //                     },
+    //                     ticks: {
+
+    //                     }
+    //                 }]
+    //             }
+    //         },
+    //         data: {
+    //             labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    //             datasets: [{
+    //                 label: 'Performance',
+    //                 data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
+    //             }]
+    //         }
+    //     });
+
+    //     // Save to jQuery object
+
+    //     $this.data('chart', salesChart);
+
+    // };
+
+
+    // // Events
+
+    // if ($chart.length) {
+    //     init($chart);
+    // }
 
 })();
 
@@ -1392,37 +1392,37 @@ var BarsChart = (function () {
     // Variables
     //
 
-    var $chart = $('#chart-bars');
+    // var $chart = $('#chart-bars');
 
 
-    //
-    // Methods
-    //
+    // //
+    // // Methods
+    // //
 
-    // Init chart
-    function initChart($chart) {
+    // // Init chart
+    // function initChart($chart) {
 
-        // Create chart
-        var ordersChart = new Chart($chart, {
-            type: 'bar',
-            data: {
-                labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                datasets: [{
-                    label: 'Sales',
-                    data: [25, 20, 30, 22, 17, 29]
-                }]
-            }
-        });
+    //     // Create chart
+    //     var ordersChart = new Chart($chart, {
+    //         type: 'bar',
+    //         data: {
+    //             labels: ['MIPA 1', 'MIPA 2', 'MIPA 3', 'MIPA 4', 'IPS 1', 'IPS 2', 'IPS 3', 'IPS 4'],
+    //             datasets: [{
+    //                 label: 'Siswa',
+    //                 data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
+    //             }]
+    //         }
+    //     });
 
-        // Save to jQuery object
-        $chart.data('chart', ordersChart);
-    }
+    //     // Save to jQuery object
+    //     $chart.data('chart', ordersChart);
+    // }
 
 
-    // Init chart
-    if ($chart.length) {
-        initChart($chart);
-    }
+    // // Init chart
+    // if ($chart.length) {
+    //     initChart($chart);
+    // }
 
 })();
 
