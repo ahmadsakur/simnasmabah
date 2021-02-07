@@ -49,4 +49,17 @@ Route::middleware('role:admin')->group(function () {
     Route::get('/updatechart/{id}', 'App\Http\Controllers\HomeController@updateChart')->name('updateChart');
 });
 
+Route::middleware('role:walikelas')->group(function () {
+
+    //surat
+    Route::get('/skhu', 'App\Http\Controllers\SuratController@SKHU');
+    Route::get('/sklu', 'App\Http\Controllers\SuratController@SKLU');
+
+
+    //nilai
+    Route::get('/nilairaport', 'App\Http\Controllers\NilaiController@raport');
+    Route::get('/nilaius', 'App\Http\Controllers\NilaiController@ujiansekolah');
+    Route::get('/nilaiup', 'App\Http\Controllers\NilaiController@ujianpraktek');
+});
+
 Route::middleware('auth')->resource('settings', App\Http\Controllers\SettingsController::class);
