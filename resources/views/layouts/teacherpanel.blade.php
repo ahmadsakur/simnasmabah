@@ -55,7 +55,7 @@
                      </a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="/datasiswa">
+                     <a class="nav-link" href="/infosiswa">
                         <i class="ni ni-hat-3 text-info"></i>
                         <span class="nav-link-text">Data Siswa</span>
                      </a>
@@ -182,6 +182,9 @@
    <script src="argon/vendor/datatables.net-buttons/js/buttons.html5.min.js"></script>
    <script src="argon/vendor/datatables.net-buttons/js/buttons.flash.min.js"></script>
    <script src="argon/vendor/datatables.net-buttons/js/buttons.print.min.js"></script>
+   <!-- Chart Js -->
+   <script src="argon/vendor/chart.js/dist/Chart.min.js"></script>
+   <script src="argon/vendor/chart.js/dist/Chart.extension.js"></script>
    <!-- Argon JS -->
    <script src="argon/js/argon.js?v=1.1.0"></script>
    @stack('customscripts')

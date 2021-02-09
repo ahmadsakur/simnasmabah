@@ -118,4 +118,42 @@ class HomeController extends Controller
         // }
         return view('content/teacherhome');
     }
+
+    public function datasiswa()
+    {
+
+        $kelas = Auth::user()->class;
+        $students = student::where('Kelas', $kelas)->get();
+        // dd($kelas);
+        return view('content.teacher.datasiswa', compact('students'));
+    }
+
+    public function teacherChart()
+    {
+        $kelas = Auth::user()->class;
+
+        $raportkelas = DB::table('raports')
+            ->join('students', 'raports.NIS', '=', 'students.NIS')
+            ->select(
+                DB::raw('avg(raports.agama) as AGM'),
+                DB::raw('avg(raports.PPKn) as PKN'),
+                DB::raw('avg(raports.bahasa_indonesia) as IND'),
+                DB::raw('avg(raports.matematika) as MTK'),
+                DB::raw('avg(raports.sejarah_indonesia) as SEJ'),
+                DB::raw('avg(raports.bahasa_inggris) as EN'),
+                DB::raw('avg(raports.seni_budaya) as SENI'),
+                DB::raw('avg(raports.PJOK) as PJOK'),
+                DB::raw('avg(raports.PKWU) as PKWU'),
+                DB::raw('avg(raports.bahasa_jawa) as JAWA'),
+                DB::raw('avg(raports.jurusan1) as J1'),
+                DB::raw('avg(raports.jurusan2) as J2'),
+                DB::raw('avg(raports.jurusan3) as J3'),
+                DB::raw('avg(raports.jurusan4) as J4'),
+                DB::raw('avg(raports.peminatan) as PMT')
+            )
+            ->where('students.Kelas', $kelas)
+            ->first();
+        // dd($raportkelas);
+        return response()->json($raportkelas);
+    }
 }

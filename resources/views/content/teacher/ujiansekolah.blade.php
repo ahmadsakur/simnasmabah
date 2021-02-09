@@ -36,8 +36,6 @@
                <thead class="thead-light" id="thead-raport" data-kelas={{Auth::user()->class}}>
                   <tr id="judul-mapel">
                      <th>Nama</th>
-                     <th>Kelas</th>
-                     <th>Semester</th>
                      <th>AGM</th>
                      <th>PPKn</th>
                      <th>IND</th>
@@ -59,8 +57,6 @@
                   @forelse($ujiansekolah as $item)
                   <tr>
                      <td> {{ $item->nama }} </td>
-                     <td> {{ $item->Kelas }} </td>
-                     <td> {{ $item->semester }} </td>
                      <td> {{ $item->agama }}</td>
                      <td> {{ $item->PPKn }}</td>
                      <td> {{ $item->bahasa_indonesia }}</td>
@@ -107,9 +103,9 @@
    $( document ).ready(function() {
    let kelas = $('#thead-raport').data("kelas"); 
       if (kelas.includes("IPS")) {
-         $("#judul-mapel").html("<th>Nama</th><th>Kelas</th><th>Semester</th><th>AGM</th><th>PPKn</th><th>IND</th><th>MTK</th><th>SEJ</th><th>EN</th><th>SENI</th><th>PJOK</th><th>PRAK</th><th>JAWA</th><th>GEO</th><th>SEJ</th><th>SOS</th><th>EKO</th><th>Peminatan</th>");
+         $("#judul-mapel").html("<th>Nama</th><th>AGM</th><th>PPKn</th><th>IND</th><th>MTK</th><th>SEJ</th><th>EN</th><th>SENI</th><th>PJOK</th><th>PRAK</th><th>JAWA</th><th>GEO</th><th>SEJ</th><th>SOS</th><th>EKO</th><th>Peminatan</th>");
       } else {
-         $("#judul-mapel").html("<th>Nama</th><th>Kelas</th><th>Semester</th><th>AGM</th><th>PPKn</th><th>IND</th><th>MTK</th><th>SEJ</th><th>EN</th><th>SENI</th><th>PJOK</th><th>PRAK</th><th>JAWA</th><th>MTK</th><th>BIO</th><th>FIS</th><th>KIM</th><th>Peminatan</th>");
+         $("#judul-mapel").html("<th>Nama</th><th>AGM</th><th>PPKn</th><th>IND</th><th>MTK</th><th>SEJ</th><th>EN</th><th>SENI</th><th>PJOK</th><th>PRAK</th><th>JAWA</th><th>MTK</th><th>BIO</th><th>FIS</th><th>KIM</th><th>Peminatan</th>");
       }
    
     

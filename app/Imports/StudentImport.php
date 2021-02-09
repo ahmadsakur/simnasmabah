@@ -25,6 +25,7 @@ class StudentImport implements ToModel, WithHeadingRow
             'Kelas'     => $row['kelas'],
             'no_peserta'      => $row['no_peserta'],
             'wali_murid'      => $row['wali_murid'],
+            'no_surat' => $row['no_surat'],
         ]);
     }
 }

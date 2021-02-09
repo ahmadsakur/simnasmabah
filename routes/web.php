@@ -50,10 +50,17 @@ Route::middleware('role:admin')->group(function () {
 });
 
 Route::middleware('role:walikelas')->group(function () {
+    //dashboard
+    Route::get('/teacherchart', 'App\Http\Controllers\HomeController@teacherChart')->name('teacherChart');
+
+    //data siswa
+    Route::get('/infosiswa', 'App\Http\Controllers\HomeController@datasiswa');
 
     //surat
     Route::get('/skhu', 'App\Http\Controllers\SuratController@SKHU');
     Route::get('/sklu', 'App\Http\Controllers\SuratController@SKLU');
+    Route::get('/downloadsklu/{id}', 'App\Http\Controllers\SuratController@DownloadSKLU');
+    Route::get('/downloadskhu/{id}', 'App\Http\Controllers\SuratController@DownloadSKHU');
 
 
     //nilai

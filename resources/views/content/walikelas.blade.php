@@ -45,7 +45,7 @@
                   <tbody>
                      @forelse($employees as $key => $employee)
                      <tr>
-                        <td style="width: 8%"> {{ $key + 1 }} </td>
+                        <td style="width: 8%"> {{ $key }} </td>
                         <td> {{ $employee->name }} </td>
                         <td> {{ $employee->class }} </td>
                         <td> {{ $employee->email }} </td>

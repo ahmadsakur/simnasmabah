@@ -34,7 +34,7 @@
          <div class="table-responsive py-4">
             <table class="table table-flush" id="datatable-basic">
                <thead class="thead-light" id="thead-raport" data-kelas={{Auth::user()->class}}>
-                  <tr id="judul-mapel">
+                  <tr>
                      <th>Nama</th>
                      <th>Kelas</th>
                      <th>Semester</th>
@@ -111,8 +111,6 @@
       } else {
          $("#judul-mapel").html("<th>Nama</th><th>Kelas</th><th>Semester</th><th>AGM</th><th>PPKn</th><th>IND</th><th>MTK</th><th>SEJ</th><th>EN</th><th>SENI</th><th>PJOK</th><th>PRAK</th><th>JAWA</th><th>MTK</th><th>BIO</th><th>FIS</th><th>KIM</th><th>Peminatan</th>");
       }
-   
-    
 });
 
 </script>

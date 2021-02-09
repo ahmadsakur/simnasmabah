@@ -17,6 +17,7 @@ class student extends Model
         'Kelas',
         'no_peserta',
         'wali_murid',
+        'no_surat'
     ];
 
 

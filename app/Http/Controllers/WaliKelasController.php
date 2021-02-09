@@ -16,7 +16,7 @@ class WaliKelasController extends Controller
     public function index()
     {
         //
-        $employees = User::where('id', '>', 4)->get();
+        $employees = User::get()->skip(1);
         return view('content.walikelas', compact('employees'));
     }
 

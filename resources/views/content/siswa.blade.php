@@ -105,6 +105,11 @@
                      <input type="text" class="form-control" name="nama" id="nama" placeholder="Ahmad Sakur"
                         autocomplete="off" required>
                   </div>
+                  <div class="form-group">
+                     <label for="surat">Nomor Surat</label>
+                     <input type="text" class="form-control" name="surat" id="surat" placeholder="423.5 / 111 / 2021"
+                        autocomplete="off" required>
+                  </div>
                   <div class="form-row">
                      <div class="form-group col-md-6">
                         <label for="NIS">NIS</label>
@@ -179,6 +184,11 @@
                      <label for="edit-nama">Nama Lengkap</label>
                      <input type="text" class="form-control" name="nama" id="edit-nama" placeholder="Ahmad Sakur"
                         autocomplete="off" required>
+                  </div>
+                  <div class="form-group">
+                     <label for="edit-surat">Nomor Surat</label>
+                     <input type="text" class="form-control" name="surat" id="edit-surat"
+                        placeholder="423.5 / 111 / 2021" autocomplete="off" required>
                   </div>
                   <div class="form-row">
                      <div class="form-group col-md-6">
@@ -342,6 +352,7 @@
          
          $('#edit-id').val(res[0].id);
          $('#edit-nama').val(res[0].nama);
+         $('#edit-surat').val(res[0].no_surat);
          $('#edit-NIS').val(res[0].NIS);
          $('#edit-NISN').val(res[0].NISN);
          $('#edit-TTL').val(res[0].TTL);

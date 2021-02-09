@@ -41,19 +41,24 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
             "NIS" => 'unique:students',
             "NISN" => 'unique:students',
             "no_peserta" => 'unique:students',
+            "no_surat" => 'unique:students'
+
         ]);
         student::create([
             "nama" => $request["nama"],
+            "no_surat" => $request["surat"],
             "TTL" => $request["TTL"],
             "NIS" => $request["NIS"],
             "NISN" => $request["NISN"],
             "Kelas" => $request["kelas"],
             "no_peserta" => $request["noPeserta"],
             "wali_murid" => $request["walimurid"],
+
         ]);
 
         return redirect('/siswa')->with('toast_success', 'Siswa berhasil ditambahkan');
@@ -99,7 +104,8 @@ class StudentController extends Controller
             'TTL' => $request["TTL"],
             'Kelas' => $request["kelas"],
             'wali_murid' => $request["walimurid"],
-            'no_Peserta' => $request["noPeserta"]
+            'no_Peserta' => $request["noPeserta"],
+            'no_surat' => $request["surat"],
         ]);
         return redirect('/siswa')->with('toast_info', 'Data Berhasil diubah');;
     }

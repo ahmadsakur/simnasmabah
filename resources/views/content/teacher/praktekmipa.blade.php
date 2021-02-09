@@ -1,7 +1,7 @@
 @extends('layouts.teacherpanel')
 @section('content')
 <!-- Header -->
-<div class="header bg-ips pb-6">
+<div class="header bg-success pb-6">
    <div class="container-fluid">
       <div class="header-body">
          <div class="row align-items-center py-4">
@@ -36,7 +36,6 @@
                <thead class="thead-light">
                   <tr>
                      <th>Nama</th>
-                     <th>Kelas</th>
                      <th>AGM</th>
                      <th>INDO</th>
                      <th>EN</>
@@ -53,7 +52,6 @@
                   @forelse($sciences as $science)
                   <tr>
                      <td> {{ $science->nama }} </td>
-                     <td> {{ $science->Kelas }} </td>
                      <td> {{ $science->agama }}</td>
                      <td> {{ $science->bahasa_indonesia }}</td>
                      <td> {{ $science->bahasa_inggris }}</td>
