@@ -122,8 +122,8 @@
                               <div class="badge badge-success">Excel</div>
                            </td>
                            <td>
-                              <a href="#!" class="btn btn-sm btn-outline-success"> <i class="fa fa-arrow-down"
-                                    aria-hidden="true"></i>
+                              <a href="{{route('datasetsiswa')}}" class="btn btn-sm btn-outline-success"> <i
+                                    class="fa fa-arrow-down" aria-hidden="true"></i>
                                  <span>Download</span></a>
                            </td>
                         </tr>
@@ -133,8 +133,8 @@
                               <div class="badge badge-success">Excel</div>
                            </td>
                            <td>
-                              <a href="#!" class="btn btn-sm btn-outline-success"> <i class="fa fa-arrow-down"
-                                    aria-hidden="true"></i>
+                              <a href="{{route('datasetraport')}}" class="btn btn-sm btn-outline-success"> <i
+                                    class="fa fa-arrow-down" aria-hidden="true"></i>
                                  <span>Download</span></a>
                            </td>
                         </tr>
@@ -144,19 +144,19 @@
                               <div class="badge badge-success">Excel</div>
                            </td>
                            <td>
-                              <a href="#!" class="btn btn-sm btn-outline-success"> <i class="fa fa-arrow-down"
-                                    aria-hidden="true"></i>
+                              <a href="{{route('dataset-us')}}" class="btn btn-sm btn-outline-success"> <i
+                                    class="fa fa-arrow-down" aria-hidden="true"></i>
                                  <span>Download</span></a>
                            </td>
                         </tr>
                         <tr>
-                           <td class="font-weight-600">Data Ujian Praktik</td>
+                           <td class="font-weight-600">Data Ujian Praktek</td>
                            <td>
                               <div class="badge badge-success">Excel</div>
                            </td>
                            <td>
-                              <a href="#!" class="btn btn-sm btn-outline-success"> <i class="fa fa-arrow-down"
-                                    aria-hidden="true"></i>
+                              <a href="{{route('dataset-up')}}" class="btn btn-sm btn-outline-success"> <i
+                                    class="fa fa-arrow-down" aria-hidden="true"></i>
                                  <span>Download</span></a>
                            </td>
                         </tr>
@@ -449,7 +449,7 @@ $( document ).ready(function() {
       let S4 = $('#chart-bars').data("ips4");
         // Create chart
         var ordersChart = new Chart($chart, {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: ['MIPA 1', 'MIPA 2', 'MIPA 3', 'MIPA 4', 'IPS 1', 'IPS 2', 'IPS 3', 'IPS 4'],
                 datasets: [{

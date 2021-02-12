@@ -53,7 +53,7 @@
                         <span class="nav-link-text">Dashboard</span>
                      </a>
                   </li>
-                  <li class="nav-item">
+                  {{-- <li class="nav-item">
                      <a class="nav-link" href="#nilai-akhir" data-toggle="collapse" role="button" aria-expanded="false"
                         aria-controls="nilai-akhir">
                         <i class="ni ni-trophy text-info"></i>
@@ -69,7 +69,7 @@
                            </li>
                         </ul>
                      </div>
-                  </li>
+                  </li> --}}
                   <li class="nav-item">
                      <a class="nav-link" href="#navbar-dashboards" data-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="navbar-dashboards">
@@ -78,6 +78,9 @@
                      </a>
                      <div class="collapse" id="navbar-dashboards">
                         <ul class="nav nav-sm flex-column">
+                           <li class="nav-item">
+                              <a href="/finalraport" class="nav-link">Nilai Akhir</a>
+                           </li>
                            <li class="nav-item">
                               <a href="/raport" class="nav-link">Raport</a>
                            </li>

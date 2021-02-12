@@ -135,9 +135,9 @@ class StudentController extends Controller
     {
         $file = $request->file('file');
         $namaFile = $file->getClientOriginalName();
-        $file->move('DataSiswa', $namaFile);
+        $file->move('Dataset', $namaFile);
 
-        Excel::import(new StudentImport, public_path('/DataSiswa/' . $namaFile));
+        Excel::import(new StudentImport, public_path('/Dataset/' . $namaFile));
         return redirect('/siswa')->with('toast_success', 'Data Berhasil diUpload');
     }
 }

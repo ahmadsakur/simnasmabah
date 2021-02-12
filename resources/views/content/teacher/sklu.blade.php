@@ -56,7 +56,7 @@
                            <td>{{$item->nama}}</td>
                            <td>{{$item->NIS}}</td>
                            <td>{{$item->Kelas}}</td>
-                           <td><a href="/downloadsklu/{{$item->NIS}}" class="btn btn-sm btn-primary"><i
+                           <td><a href="/downloadsklu/{{$item->NIS}}" class="btn btn-sm btn-primary" target="_blank"><i
                                     class="fa fa-chevron-down" aria-hidden="true"></i>
                                  Download</a></td>
                         </tr>

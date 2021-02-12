@@ -27,10 +27,10 @@ class UjianSekolahImport implements ToModel, WithHeadingRow
             'PJOK'  => $row['pjok'],
             'PKWU'  => $row['pkwu'],
             'bahasa_jawa'   => $row['bahasa_jawa'],
-            'jurusan1'  => $row['jurusan1'],
-            'jurusan2'  => $row['jurusan2'],
-            'jurusan3'  => $row['jurusan3'],
-            'jurusan4'  => $row['jurusan4'],
+            'jurusan1'  => $row['mtk_geo'],
+            'jurusan2'  => $row['bio_sej'],
+            'jurusan3'  => $row['fis_sos'],
+            'jurusan4'  => $row['kim_eko'],
             'peminatan' => $row['peminatan'],
         ]);
     }

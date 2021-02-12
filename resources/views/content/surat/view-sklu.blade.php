@@ -109,16 +109,13 @@
       <br>
       <br>
       <br>
-      <b>{{$setting->kepala_sekolah}}</b>
+      {{-- <b>{{$setting->kepala_sekolah}}</b>
       <br>
-      NIP. {{$setting->NIP}}
+      NIP. {{$setting->NIP}} --}}
+      <b>Ahmad Sakur</b>
+      <br>
+      NIP. 827467325475
    </p>
-
-
-
-   <script type="text/javascript">
-      // window.print();
-   </script>
 </body>
 
 </html>

@@ -100,7 +100,7 @@ class UjianPraktekController extends Controller
 
     public function resetujianpraktek(Request $request)
     {
-        DB::table('ujian_sekolah')->delete();
+        DB::table('ujian_praktek')->delete();
         return redirect('/ujianpraktek')->with('toast_success', 'Tabel Berhasil direset');
     }
 

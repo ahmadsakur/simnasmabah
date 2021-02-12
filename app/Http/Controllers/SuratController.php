@@ -7,6 +7,7 @@ use App\Models\student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 
 class SuratController extends Controller
@@ -28,6 +29,7 @@ class SuratController extends Controller
 
     public function DownloadSKLU($NIS)
     {
+        //loadview
         $setting = setting::first();
         $data = student::where('NIS', $NIS)->first();
         return view('content.surat.view-sklu', compact('data', 'setting'));

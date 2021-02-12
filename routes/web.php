@@ -47,6 +47,10 @@ Route::middleware('role:admin')->group(function () {
     //home menu
     Route::patch('/updateadmin', 'App\Http\Controllers\HomeController@updateAdmin')->name('updateAdmin');
     Route::get('/updatechart/{id}', 'App\Http\Controllers\HomeController@updateChart')->name('updateChart');
+    Route::get('/datasetsiswa', 'App\Http\Controllers\HomeController@datasetsiswa')->name('datasetsiswa');
+    Route::get('/datasetraport', 'App\Http\Controllers\HomeController@datasetraport')->name('datasetraport');
+    Route::get('/dataset-us', 'App\Http\Controllers\HomeController@datasetUS')->name('dataset-us');
+    Route::get('/dataset-up', 'App\Http\Controllers\HomeController@datasetUP')->name('dataset-up');
 });
 
 Route::middleware('role:walikelas')->group(function () {

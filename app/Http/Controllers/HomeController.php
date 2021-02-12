@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -108,6 +109,26 @@ class HomeController extends Controller
             ->where('students.Kelas', 'like', $id . '%')
             ->first();
         return response()->json($toggler);
+    }
+    //download
+    public function datasetsiswa()
+    {
+        return Storage::download('public/template/Dataset Siswa.xlsx');
+    }
+
+    public function datasetraport()
+    {
+        return Storage::download('public/template/Dataset Raport.xlsx');
+    }
+
+    public function datasetUS()
+    {
+        return Storage::download('public/template/Dataset US.xlsx');
+    }
+
+    public function datasetUP()
+    {
+        return Storage::download('public/template/Dataset UP.xlsx');
     }
 
 
