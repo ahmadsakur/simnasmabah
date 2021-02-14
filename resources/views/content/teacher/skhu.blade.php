@@ -55,9 +55,16 @@
                            <td>{{$item->nama}}</td>
                            <td>{{$item->NIS}}</td>
                            <td>{{$item->Kelas}}</td>
-                           <td><a href="/downloadskhu/{{$item->NIS}}" class="btn btn-sm btn-primary"><i
-                                    class="fa fa-chevron-down" aria-hidden="true"></i>
-                                 Download</a></td>
+                           <td>
+                              {{-- <a href="/downloadskhu/{{$item->NIS}}" class="btn btn-sm btn-primary"><i
+                                 class="fa fa-chevron-down" aria-hidden="true"></i>
+                              Download</a> --}}
+                              <form action="/downloadskhu" method="POST" target="_blank">
+                                 @csrf
+                                 <input type="hidden" name="NIS" value="{{$item->NIS}}">
+                                 <button class="btn btn-sm btn-primary">Download</button>
+                              </form>
+                           </td>
                         </tr>
                         @empty
                         <tr>

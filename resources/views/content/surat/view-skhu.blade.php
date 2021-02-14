@@ -1,7 +1,7 @@
 <html>
 
 <head>
-   <title>KIP</title>
+   <title>SKHU-{{$data->Kelas}}-{{$data->nama}}</title>
    <style>
       body {
          font-family: sans-serif;
@@ -114,38 +114,38 @@
          <tr>
             <td class="number">1</td>
             <td>Pendidikan Agama dan Budi Pekerti</td>
-            <td class="marks"> 85</td>
-            <td class="marks"> 76</td>
+            <td class="marks">{{substr($raport["AGM"],0,2)}}</td>
+            <td class="marks"> ~</td>
          </tr>
          <tr>
             <td class="number">2</td>
             <td>Pendidikan Pancasila dan Kewarganegaraan</td>
-            <td class="marks">100</td>
-            <td class="marks">100</td>
+            <td class="marks">{{substr($raport["PKN"],0,2)}}</td>
+            <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">3</td>
             <td>Bahasa Indonesia</td>
-            <td class="marks">100</td>
-            <td class="marks">100</td>
+            <td class="marks">{{substr($raport["IND"],0,2)}}</td>
+            <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">4</td>
             <td>Matematika</td>
-            <td class="marks">100</td>
-            <td class="marks">100</td>
+            <td class="marks">{{substr($raport["MTK"],0,2)}}</td>
+            <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">5</td>
             <td>Sejarah Indonesia</td>
-            <td class="marks">100</td>
-            <td class="marks">100</td>
+            <td class="marks">{{substr($raport["SEJ"],0,2)}}</td>
+            <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">6</td>
             <td>Bahasa Inggris</td>
-            <td class="marks">100</td>
-            <td class="marks">100</td>
+            <td class="marks">{{substr($raport["EN"],0,2)}}</td>
+            <td class="marks">~</td>
          </tr>
          <tr>
             <td colspan="2" style="font-weight: bold;">Kelompok B</td>
@@ -155,20 +155,20 @@
          <tr>
             <td class="number">1</td>
             <td>Seni Budaya</td>
-            <td class="marks"> 85</td>
-            <td class="marks"> 76</td>
+            <td class="marks">{{substr($raport["SENI"],0,2)}}</td>
+            <td class="marks"> ~</td>
          </tr>
          <tr>
             <td class="number">2</td>
             <td>Pendidikan Jasmani, Olahraga dan Kesehatan</td>
-            <td class="marks">100</td>
-            <td class="marks">100</td>
+            <td class="marks">{{substr($raport["PJOK"],0,2)}}</td>
+            <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">3</td>
             <td>Prakarya dan Kewirausahaan</td>
-            <td class="marks">100</td>
-            <td class="marks">100</td>
+            <td class="marks">{{substr($raport["PKWU"],0,2)}}</td>
+            <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">4</td>
@@ -179,8 +179,8 @@
          <tr>
             <td></td>
             <td>a. Bahasa Jawa</td>
-            <td class="marks">100</td>
-            <td class="marks">100</td>
+            <td class="marks">{{substr($raport["JAWA"],0,2)}}</td>
+            <td class="marks">~</td>
          </tr>
          <tr>
             <td colspan="2" style="font-weight: bold;">Kelompok C</td>
@@ -189,27 +189,27 @@
          </tr>
          <tr>
             <td class="number">1</td>
-            <td id="jurusan1">Matematika</td>
-            <td class="marks"> 85</td>
-            <td class="marks"> 76</td>
+            <td id="jurusan1">{{$mapel["J1"]}}</td>
+            <td class="marks">{{substr($raport["J1"],0,2)}}</td>
+            <td class="marks"> ~</td>
          </tr>
          <tr>
             <td class="number">2</td>
-            <td id="jurusan2">Biologi</td>
-            <td class="marks">100</td>
-            <td class="marks">100</td>
+            <td id="jurusan2">{{$mapel["J2"]}}</td>
+            <td class="marks">{{substr($raport["J2"],0,2)}}</td>
+            <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">3</td>
-            <td id="jurusan3">Fisika</td>
-            <td class="marks">100</td>
-            <td class="marks">100</td>
+            <td id="jurusan3">{{$mapel["J3"]}}</td>
+            <td class="marks">{{substr($raport["J3"],0,2)}}</td>
+            <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">4</td>
-            <td id="jurusan4">Kimia</td>
-            <td class="marks">100</td>
-            <td class="marks">100</td>
+            <td id="jurusan4">{{$mapel["J4"]}}</td>
+            <td class="marks">{{substr($raport["J4"],0,2)}}</td>
+            <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">5</td>
@@ -219,14 +219,14 @@
          </tr>
          <tr>
             <td></td>
-            <td id="peminatan">Peminatan</td>
-            <td class=" marks">100</td>
-            <td class="marks">100</td>
+            <td id="peminatan">{{$mapel["Peminatan"]}}</td>
+            <td class=" marks">{{substr($raport["PMT"],0,2)}}</td>
+            <td class="marks">~</td>
          </tr>
          <tr style="font-weight: bold">
             <td colspan="2">Rata Rata</td>
-            <td class="marks">100</td>
-            <td class="marks">80</td>
+            <td class="marks">{{substr(array_sum($raport)/count($raport),0,5)}}</td>
+            <td class="marks">~</td>
          </tr>
       </tbody>
    </table>
@@ -241,11 +241,6 @@
       <b>ttt</b>
       <br>
       NIP. 64752735471 </p>
-   <script>
-      document.addEventListener("DOMContentLoaded", function(event) { 
-         document.getElementById("peminatan").innerHTML = "Paragraph changed!";
-      });
-   </script>
 </body>
 
 </html>

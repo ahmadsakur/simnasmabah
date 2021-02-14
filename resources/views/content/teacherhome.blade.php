@@ -135,14 +135,13 @@
    $( document ).ready(function() {
 
       var $chartRaport = $('#chart-raport');
-      var Kelas = $('#editAdminButton').data("kelas");
+      var Kelas = $('#editTeacherButton').data("kelas");
 
-      
       $.ajax({
       type: "get",
       url: 'teacherchart/',
       dataType: 'json',
-      success: function(res){
+      success: function(res){         
          if (Kelas.match('MIPA') == null) {
             var chart = new Chart($chartRaport, {
             type: 'bar',
