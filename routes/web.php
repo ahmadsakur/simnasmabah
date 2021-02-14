@@ -56,6 +56,7 @@ Route::middleware('role:admin')->group(function () {
 Route::middleware('role:walikelas')->group(function () {
     //dashboard
     Route::get('/teacherchart', 'App\Http\Controllers\HomeController@teacherChart')->name('teacherChart');
+    Route::patch('/updateguru', 'App\Http\Controllers\HomeController@updateGuru')->name('updateguru');
 
     //data siswa
     Route::get('/infosiswa', 'App\Http\Controllers\HomeController@datasiswa');

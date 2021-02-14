@@ -53,23 +53,18 @@
                         <span class="nav-link-text">Dashboard</span>
                      </a>
                   </li>
-                  {{-- <li class="nav-item">
-                     <a class="nav-link" href="#nilai-akhir" data-toggle="collapse" role="button" aria-expanded="false"
-                        aria-controls="nilai-akhir">
-                        <i class="ni ni-trophy text-info"></i>
-                        <span class="nav-link-text">Nilai Akhir</span>
+                  <li class="nav-item">
+                     <a class="nav-link" href="/guru">
+                        <i class="ni ni-badge text-red"></i>
+                        <span class="nav-link-text">Data Guru</span>
                      </a>
-                     <div class="collapse" id="nilai-akhir">
-                        <ul class="nav nav-sm flex-column">
-                           <li class="nav-item">
-                              <a href="/finalraport" class="nav-link">Raport</a>
-                           </li>
-                           <li class="nav-item">
-                              <a href="#" class="nav-link">Ujian Sekolah</a>
-                           </li>
-                        </ul>
-                     </div>
-                  </li> --}}
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="/siswa">
+                        <i class="ni ni-hat-3 text-info"></i>
+                        <span class="nav-link-text">Data Siswa</span>
+                     </a>
+                  </li>
                   <li class="nav-item">
                      <a class="nav-link" href="#navbar-dashboards" data-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="navbar-dashboards">
@@ -79,9 +74,6 @@
                      <div class="collapse" id="navbar-dashboards">
                         <ul class="nav nav-sm flex-column">
                            <li class="nav-item">
-                              <a href="/finalraport" class="nav-link">Nilai Akhir</a>
-                           </li>
-                           <li class="nav-item">
                               <a href="/raport" class="nav-link">Raport</a>
                            </li>
                            <li class="nav-item">
@@ -90,20 +82,11 @@
                            <li class="nav-item">
                               <a href="/ujianpraktek" class="nav-link">Ujian Praktek</a>
                            </li>
+                           <li class="nav-item">
+                              <a href="/finalraport" class="nav-link">Nilai Akhir</a>
+                           </li>
                         </ul>
                      </div>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="/siswa">
-                        <i class="ni ni-hat-3 text-info"></i>
-                        <span class="nav-link-text">Data Siswa</span>
-                     </a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="/guru">
-                        <i class="ni ni-badge text-red"></i>
-                        <span class="nav-link-text">Data Guru</span>
-                     </a>
                   </li>
                </ul>
             </div>

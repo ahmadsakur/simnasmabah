@@ -17,8 +17,8 @@
             <div class="col-lg-6 col-5 text-right">
                <button type="button" data-id="{{Auth::user()->id}}" data-name="{{Auth::user()->name}}"
                   data-email="{{Auth::user()->email}}" data-kelas="{{Auth::user()->class}}" data-toggle="modal"
-                  data-target="#accountModal" class="mt-2 btn btn-sm btn-outline-neutral"
-                  id="editAdminButton">Account</button>
+                  data-target="#settingModal" class="mt-2 btn btn-sm btn-outline-neutral"
+                  id="editTeacherButton">Account</button>
             </div>
          </div>
          <!-- Card stats -->
@@ -47,6 +47,83 @@
          </div>
       </div>
    </div> <!-- row -->
+   <!-- akun modal -->
+   <div class="modal fade" id="settingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="exampleModalLabel">Pengaturan Akun</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <form role="form" action="{{route('updateguru')}}" method="POST">
+               @method('PATCH')
+               @csrf
+               <div class="modal-body">
+                  <input type="hidden" name="id" id="edit-id">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <div class="form-group">
+                           <label for="name">Nama</label>
+                           <div class="input-group input-group-merge">
+                              <div class="input-group-prepend">
+                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
+                              </div>
+                              <input class="form-control" placeholder="Nama Lengkap" type="text" name="name"
+                                 id="edit-name" required autocomplete="off">
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="form-group">
+                           <label for="email">Email</label>
+                           <div class="input-group input-group-merge">
+                              <div class="input-group-prepend">
+                                 <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                              </div>
+                              <input class="form-control" placeholder="Email" type="email" name="email" id="edit-email"
+                                 required>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-6">
+                        <label for="password">Password</label>
+                        <div class="form-group">
+                           <div class="input-group input-group-merge">
+                              <div class="input-group-prepend">
+                                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                              </div>
+                              <input class="form-control" placeholder="Password" type="password" name="password"
+                                 id="password" required>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <label for="confirmPassword">Konfirmasi Password</label>
+                        <div class="form-group">
+                           <div class="input-group input-group-merge">
+                              <div class="input-group-prepend">
+                                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                              </div>
+                              <input class="form-control" placeholder="Password" type="password" name="confirmPassword"
+                                 id="confirmPassword" required>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-primary">Update</button>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
 </div>
 
 
@@ -102,6 +179,36 @@
 
       });
    });
+
+
+
+   //edit akun
+   $(document).on('click','button#editTeacherButton',function(){
+   let id = $(this).data('id');
+   let name = $(this).data('name');
+   let email = $(this).data('email');
+  
+   $('#edit-id').val(id);
+   $('#edit-name').val(name);
+   $('#edit-email').val(email);
+   
+});
+
+
+   //validasi password
+   var password = document.getElementById("password");
+   var confirm_password = document.getElementById("confirmPassword");
+
+   function validatePassword(){
+      if(password.value != confirm_password.value) {
+         confirm_password.setCustomValidity("Passwords Don't Match");
+      } else {
+         confirm_password.setCustomValidity('');
+      }
+   }
+
+   password.onchange = validatePassword;
+   confirm_password.onkeyup = validatePassword;
 
 </script>
 @endpush

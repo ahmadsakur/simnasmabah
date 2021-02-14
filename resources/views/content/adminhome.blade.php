@@ -42,9 +42,9 @@
             <div class="card-body">
                <!-- Chart -->
                <div class="chart">
-                  <canvas id="chart-bars" class="chart-canvas" data-ips1="{{$student[0]}}" data-ips2="{{$student[1]}}"
-                     data-ips3="{{$student[2]}}" data-ips4="{{$student[3]}}" data-mipa1="{{$student[4]}}"
-                     data-mipa2="{{$student[5]}}" data-mipa3="{{$student[6]}}" data-mipa4="{{$student[7]}}"></canvas>
+                  <canvas id="chart-bars" class="chart-canvas" data-mipa1="{{$student[0]}}" data-mipa2="{{$student[1]}}"
+                     data-mipa3="{{$student[2]}}" data-mipa4="{{$student[3]}}" data-ips1="{{$student[4]}}"
+                     data-ips2="{{$student[5]}}" data-ips3="{{$student[6]}}" data-ips4="{{$student[7]}}"></canvas>
 
 
                </div>

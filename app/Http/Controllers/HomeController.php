@@ -177,4 +177,15 @@ class HomeController extends Controller
         // dd($raportkelas);
         return response()->json($raportkelas);
     }
+
+    public function updateGuru(Request $request)
+    {
+
+        User::where('id', $request["id"])->update([
+            'name' => $request["name"],
+            'email' => $request["email"],
+            'password' => Hash::make($request["password"])
+        ]);
+        return redirect('/dashboard')->with('toast_info', 'Data Berhasil diubah');;
+    }
 }
