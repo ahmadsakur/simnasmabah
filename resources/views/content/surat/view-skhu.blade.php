@@ -114,37 +114,37 @@
          <tr>
             <td class="number">1</td>
             <td>Pendidikan Agama dan Budi Pekerti</td>
-            <td class="marks">{{substr($raport["AGM"],0,2)}}</td>
+            <td class="marks">{{round($raport["AGM"],0,2)}}</td>
             <td class="marks"> ~</td>
          </tr>
          <tr>
             <td class="number">2</td>
             <td>Pendidikan Pancasila dan Kewarganegaraan</td>
-            <td class="marks">{{substr($raport["PKN"],0,2)}}</td>
+            <td class="marks">{{round($raport["PKN"],0,2)}}</td>
             <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">3</td>
             <td>Bahasa Indonesia</td>
-            <td class="marks">{{substr($raport["IND"],0,2)}}</td>
+            <td class="marks">{{round($raport["IND"],0,2)}}</td>
             <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">4</td>
             <td>Matematika</td>
-            <td class="marks">{{substr($raport["MTK"],0,2)}}</td>
+            <td class="marks">{{round($raport["MTK"],0,2)}}</td>
             <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">5</td>
             <td>Sejarah Indonesia</td>
-            <td class="marks">{{substr($raport["SEJ"],0,2)}}</td>
+            <td class="marks">{{round($raport["SEJ"],0,2)}}</td>
             <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">6</td>
             <td>Bahasa Inggris</td>
-            <td class="marks">{{substr($raport["EN"],0,2)}}</td>
+            <td class="marks">{{round($raport["EN"],0,2)}}</td>
             <td class="marks">~</td>
          </tr>
          <tr>
@@ -155,19 +155,19 @@
          <tr>
             <td class="number">1</td>
             <td>Seni Budaya</td>
-            <td class="marks">{{substr($raport["SENI"],0,2)}}</td>
+            <td class="marks">{{round($raport["SENI"],0,2)}}</td>
             <td class="marks"> ~</td>
          </tr>
          <tr>
             <td class="number">2</td>
             <td>Pendidikan Jasmani, Olahraga dan Kesehatan</td>
-            <td class="marks">{{substr($raport["PJOK"],0,2)}}</td>
+            <td class="marks">{{round($raport["PJOK"],0,2)}}</td>
             <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">3</td>
             <td>Prakarya dan Kewirausahaan</td>
-            <td class="marks">{{substr($raport["PKWU"],0,2)}}</td>
+            <td class="marks">{{round($raport["PKWU"],0,2)}}</td>
             <td class="marks">~</td>
          </tr>
          <tr>
@@ -179,7 +179,7 @@
          <tr>
             <td></td>
             <td>a. Bahasa Jawa</td>
-            <td class="marks">{{substr($raport["JAWA"],0,2)}}</td>
+            <td class="marks">{{round($raport["JAWA"],0,2)}}</td>
             <td class="marks">~</td>
          </tr>
          <tr>
@@ -190,25 +190,25 @@
          <tr>
             <td class="number">1</td>
             <td id="jurusan1">{{$mapel["J1"]}}</td>
-            <td class="marks">{{substr($raport["J1"],0,2)}}</td>
+            <td class="marks">{{round($raport["J1"],0,2)}}</td>
             <td class="marks"> ~</td>
          </tr>
          <tr>
             <td class="number">2</td>
             <td id="jurusan2">{{$mapel["J2"]}}</td>
-            <td class="marks">{{substr($raport["J2"],0,2)}}</td>
+            <td class="marks">{{round($raport["J2"],0,2)}}</td>
             <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">3</td>
             <td id="jurusan3">{{$mapel["J3"]}}</td>
-            <td class="marks">{{substr($raport["J3"],0,2)}}</td>
+            <td class="marks">{{round($raport["J3"],0,2)}}</td>
             <td class="marks">~</td>
          </tr>
          <tr>
             <td class="number">4</td>
             <td id="jurusan4">{{$mapel["J4"]}}</td>
-            <td class="marks">{{substr($raport["J4"],0,2)}}</td>
+            <td class="marks">{{round($raport["J4"],0,2)}}</td>
             <td class="marks">~</td>
          </tr>
          <tr>
@@ -220,7 +220,7 @@
          <tr>
             <td></td>
             <td id="peminatan">{{$mapel["Peminatan"]}}</td>
-            <td class=" marks">{{substr($raport["PMT"],0,2)}}</td>
+            <td class=" marks">{{round($raport["PMT"],0,2)}}</td>
             <td class="marks">~</td>
          </tr>
          <tr style="font-weight: bold">

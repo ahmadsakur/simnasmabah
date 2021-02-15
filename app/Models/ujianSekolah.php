@@ -11,7 +11,7 @@ class ujianSekolah extends Model
     protected $table = 'ujian_sekolah';
 
     protected $fillable = [
-        'NIS',
+        'kode',
         'agama',
         'PPKn',
         'bahasa_indonesia',

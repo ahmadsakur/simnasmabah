@@ -47,7 +47,7 @@
                <table class="table table-flush" id="datatable-basic">
                   <thead class="thead-light">
                      <tr>
-                        <th>No</th>
+                        <th>Kode</th>
                         <th>Nama</th>
                         <th>NIS</th>
                         <th>No Peserta</th>
@@ -57,9 +57,9 @@
                      </tr>
                   </thead>
                   <tbody>
-                     @forelse($students as $key => $student)
+                     @forelse($students as $student)
                      <tr>
-                        <td style="width: 4%"> {{ $key + 1 }} </td>
+                        <td style="width: 4%"> {{ $student->kode }} </td>
                         <td> {{ $student->nama }} </td>
                         <td> {{ $student->NIS }} </td>
                         <td> {{ $student->no_peserta }} </td>
@@ -111,12 +111,16 @@
                         autocomplete="off" required>
                   </div>
                   <div class="form-row">
-                     <div class="form-group col-md-6">
+                     <div class="form-group col-md-4">
+                        <label for="kode">Kode</label>
+                        <input type="text" class="form-control" id="kode" name="kode" placeholder="Kode Siswa" required>
+                     </div>
+                     <div class="form-group col-md-4">
                         <label for="NIS">NIS</label>
                         <input type="text" class="form-control" id="NIS" name="NIS" placeholder="Nomor Induk Sekolah"
                            required>
                      </div>
-                     <div class="form-group col-md-6">
+                     <div class="form-group col-md-4">
                         <label for="NISN">NISN</label>
                         <input type="text" class="form-control" id="NISN" name="NISN"
                            placeholder="Nomor Induk Siswa Nasional" required>
@@ -191,12 +195,17 @@
                         placeholder="423.5 / 111 / 2021" autocomplete="off" required>
                   </div>
                   <div class="form-row">
-                     <div class="form-group col-md-6">
+                     <div class="form-group col-md-4">
+                        <label for="edit-kode">Kode</label>
+                        <input type="text" class="form-control" id="edit-kode" name="kode"
+                           placeholder="Nomor Induk Sekolah" required>
+                     </div>
+                     <div class="form-group col-md-4">
                         <label for="edit-NIS">NIS</label>
                         <input type="text" class="form-control" id="edit-NIS" name="NIS"
                            placeholder="Nomor Induk Sekolah" required>
                      </div>
-                     <div class="form-group col-md-6">
+                     <div class="form-group col-md-4">
                         <label for="edit-NISN">NISN</label>
                         <input type="text" class="form-control" id="edit-NISN" name="NISN"
                            placeholder="Nomor Induk Siswa Nasional" required>
@@ -352,6 +361,7 @@
          
          $('#edit-id').val(res[0].id);
          $('#edit-nama').val(res[0].nama);
+         $('#edit-kode').val(res[0].kode);
          $('#edit-surat').val(res[0].no_surat);
          $('#edit-NIS').val(res[0].NIS);
          $('#edit-NISN').val(res[0].NISN);

@@ -19,13 +19,13 @@ class UjianPraktekController extends Controller
     {
         //
         $sciences = DB::table('ujian_praktek')
-            ->join('students', 'ujian_praktek.NIS', '=', 'students.NIS')
+            ->join('students', 'ujian_praktek.kode', '=', 'students.kode')
             ->select('ujian_praktek.*', 'students.nama', 'students.Kelas')
             ->where('students.Kelas', 'like', 'MIPA%')
             ->get();
 
         $socials = DB::table('ujian_praktek')
-            ->join('students', 'ujian_praktek.NIS', '=', 'students.NIS')
+            ->join('students', 'ujian_praktek.kode', '=', 'students.kode')
             ->select('ujian_praktek.*', 'students.nama', 'students.Kelas')
             ->where('students.Kelas', 'like', 'IPS%')
             ->get();

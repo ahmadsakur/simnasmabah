@@ -17,7 +17,7 @@ class RaportImport implements ToModel, WithHeadingRow
     {
 
         return new raport([
-            'NIS'   => $row['kode'],
+            'kode'   => $row['kode'],
             'semester'  => $row['semester'],
             'agama' => $row['agama'],
             'PPKn'  => $row['ppkn'],

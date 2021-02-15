@@ -16,7 +16,7 @@ class UjianSekolahImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         return new ujianSekolah([
-            'NIS'   => $row['kode'],
+            'kode'   => $row['kode'],
             'agama' => $row['agama'],
             'PPKn'  => $row['ppkn'],
             'bahasa_indonesia'  => $row['bahasa_indonesia'],

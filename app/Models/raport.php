@@ -10,7 +10,7 @@ class raport extends Model
     use HasFactory;
 
     protected $fillable = [
-        'NIS',
+        'kode',
         'semester',
         'agama',
         'PPKn',

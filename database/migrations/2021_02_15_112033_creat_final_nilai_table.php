@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFinalRaportTable extends Migration
+class CreatFinalNilaiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateFinalRaportTable extends Migration
      */
     public function up()
     {
-        Schema::create('final_raport', function (Blueprint $table) {
+        Schema::create('final_nilai', function (Blueprint $table) {
             $table->id();
-            $table->integer('NIS');
-            $table->foreign('NIS')->references('NIS')->on('students')->onUpdate('cascade')->onDelete('cascade');;
+            $table->integer('kode');
+            $table->foreign('kode')->references('kode')->on('students')->onUpdate('cascade')->onDelete('cascade');
             //kelompok A
             $table->float('agama', 5, 2)->default('0');
             $table->float('PPKn', 5, 2)->default('0');
@@ -46,6 +46,6 @@ class CreateFinalRaportTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('final_raport');
+        //
     }
 }

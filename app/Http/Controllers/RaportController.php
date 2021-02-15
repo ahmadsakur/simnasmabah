@@ -18,13 +18,13 @@ class RaportController extends Controller
     public function index()
     {
         $sciences = DB::table('raports')
-            ->join('students', 'raports.NIS', '=', 'students.NIS')
+            ->join('students', 'raports.kode', '=', 'students.kode')
             ->select('raports.*', 'students.nama', 'students.Kelas')
             ->where('students.Kelas', 'like', 'MIPA%')
             ->get();
 
         $socials = DB::table('raports')
-            ->join('students', 'raports.NIS', '=', 'students.NIS')
+            ->join('students', 'raports.kode', '=', 'students.kode')
             ->select('raports.*', 'students.nama', 'students.Kelas')
             ->where('students.Kelas', 'like', 'IPS%')
             ->get();

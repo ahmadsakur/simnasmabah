@@ -10,6 +10,7 @@ class student extends Model
     use HasFactory;
 
     protected $fillable = [
+        'kode',
         'nama',
         'TTL',
         'NIS',
@@ -35,9 +36,9 @@ class student extends Model
 
         if (in_array($kelas, $mipa)) {
             if (in_array($kelas, array('MIPA 1', 'MIPA 2'))) {
-                $peminatan = 'minat A';
+                $peminatan = 'Bahasa dan Sastra Perancis';
             } else {
-                $peminatan = 'minat B';
+                $peminatan = 'Bahasa dan Sastra Inggris';
             }
             $mapel = array(
                 'J1' => 'Matematika',
@@ -48,9 +49,9 @@ class student extends Model
             );
         } else {
             if (in_array($kelas, array('IPS 1', 'IPS 2'))) {
-                $peminatan = 'minat C';
+                $peminatan = 'Biologi';
             } else {
-                $peminatan = 'minat D';
+                $peminatan = 'Kimia';
             }
             $mapel = array(
                 'J1' => 'Geografi',

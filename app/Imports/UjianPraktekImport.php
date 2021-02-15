@@ -19,7 +19,7 @@ class UjianPraktekImport implements ToModel, WithHeadingRow
     {
         return new ujianPraktek([
             //
-            'NIS'   => $row['kode'],
+            'kode'   => $row['kode'],
             'agama' => $row['agama'],
             'PPKn'  => $row['ppkn'],
             'bahasa_indonesia'  => $row['bahasa_indonesia'],

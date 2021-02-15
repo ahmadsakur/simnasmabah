@@ -20,13 +20,13 @@ class UjianSekolahController extends Controller
     {
         //
         $sciences = DB::table('ujian_sekolah')
-            ->join('students', 'ujian_sekolah.NIS', '=', 'students.NIS')
+            ->join('students', 'ujian_sekolah.kode', '=', 'students.kode')
             ->select('ujian_sekolah.*', 'students.nama', 'students.Kelas')
             ->where('students.Kelas', 'like', 'MIPA%')
             ->get();
 
         $socials = DB::table('ujian_sekolah')
-            ->join('students', 'ujian_sekolah.NIS', '=', 'students.NIS')
+            ->join('students', 'ujian_sekolah.kode', '=', 'students.kode')
             ->select('ujian_sekolah.*', 'students.nama', 'students.Kelas')
             ->where('students.Kelas', 'like', 'IPS%')
             ->get();

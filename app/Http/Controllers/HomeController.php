@@ -32,7 +32,7 @@ class HomeController extends Controller
     public function admin()
     {
         $chart = DB::table('raports')
-            ->join('students', 'raports.NIS', '=', 'students.NIS')
+            ->join('students', 'raports.kode', '=', 'students.kode')
             ->select(
                 DB::raw('avg(raports.agama) as AGM'),
                 DB::raw('avg(raports.PPKn) as PKN'),
@@ -88,7 +88,7 @@ class HomeController extends Controller
     public function updateChart($id)
     {
         $toggler = DB::table('raports')
-            ->join('students', 'raports.NIS', '=', 'students.NIS')
+            ->join('students', 'raports.kode', '=', 'students.kode')
             ->select(
                 DB::raw('avg(raports.agama) as AGM'),
                 DB::raw('avg(raports.PPKn) as PKN'),
@@ -154,7 +154,7 @@ class HomeController extends Controller
         $kelas = Auth::user()->class;
 
         $raportkelas = DB::table('raports')
-            ->join('students', 'raports.NIS', '=', 'students.NIS')
+            ->join('students', 'raports.kode', '=', 'students.kode')
             ->select(
                 DB::raw('avg(raports.agama) as AGM'),
                 DB::raw('avg(raports.PPKn) as PKN'),

@@ -43,6 +43,7 @@ class StudentController extends Controller
     {
         // dd($request);
         $request->validate([
+            "kode" => 'unique:students',
             "NIS" => 'unique:students',
             "NISN" => 'unique:students',
             "no_peserta" => 'unique:students',
@@ -50,6 +51,7 @@ class StudentController extends Controller
 
         ]);
         student::create([
+            "kode" => $request["kode"],
             "nama" => $request["nama"],
             "no_surat" => $request["surat"],
             "TTL" => $request["TTL"],

@@ -25,6 +25,7 @@ class StudentExport implements FromCollection, ShouldAutoSize, WithMapping, With
     public function map($student): array
     {
         return [
+            $student->kode,
             $student->nama,
             $student->TTL,
             $student->NIS,
@@ -40,6 +41,7 @@ class StudentExport implements FromCollection, ShouldAutoSize, WithMapping, With
     public function headings(): array
     {
         return [
+            'Kode',
             'Nama Lengkap',
             'TTL',
             'NIS',
@@ -55,7 +57,7 @@ class StudentExport implements FromCollection, ShouldAutoSize, WithMapping, With
     {
         return [
             AfterSheet::class => function (AfterSheet $event) {
-                $event->sheet->getStyle('A1:H1')->applyFromArray([
+                $event->sheet->getStyle('A1:I1')->applyFromArray([
                     'font' => [
                         'bold' => true
                     ]

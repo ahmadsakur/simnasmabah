@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class finalRaport extends Model
+class finalNilai extends Model
 {
     use HasFactory;
 
-    protected $table = "final_raport";
+    protected $table = "nilai";
 }

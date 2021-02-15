@@ -15,8 +15,8 @@ class CreateUjianSekolahTable extends Migration
     {
         Schema::create('ujian_sekolah', function (Blueprint $table) {
             $table->id();
-            $table->integer('NIS');
-            $table->foreign('NIS')->references('NIS')->on('students')->onUpdate('cascade')->onDelete('cascade');
+            $table->integer('kode');
+            $table->foreign('kode')->references('kode')->on('students')->onUpdate('cascade')->onDelete('cascade');
             //kelompok A
             $table->float('agama', 5, 2)->default('0');
             $table->float('PPKn', 5, 2)->default('0');
