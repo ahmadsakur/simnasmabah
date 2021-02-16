@@ -28,4 +28,10 @@ class ujianPraktek extends Model
         'jurusan4',
         'peminatan',
     ];
+
+    public static function getNilai($kode)
+    {
+        $UP = ujianPraktek::where('kode', $kode)->first()->toArray();
+        return $UP;
+    }
 }

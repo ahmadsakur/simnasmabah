@@ -61,7 +61,7 @@
                               Download</a> --}}
                               <form action="/downloadskhu" method="POST" target="_blank">
                                  @csrf
-                                 <input type="hidden" name="NIS" value="{{$item->NIS}}">
+                                 <input type="hidden" name="kode" value="{{$item->kode}}">
                                  <button class="btn btn-sm btn-primary">Download</button>
                               </form>
                            </td>

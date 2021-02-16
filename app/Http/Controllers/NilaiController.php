@@ -13,7 +13,7 @@ class NilaiController extends Controller
     {
         $kelas = Auth::user()->class;
         $raports = DB::table('raports')
-            ->join('students', 'raports.NIS', '=', 'students.NIS')
+            ->join('students', 'raports.kode', '=', 'students.kode')
             ->select('raports.*', 'students.nama', 'students.Kelas')
             ->where('students.Kelas', $kelas)
             ->get();
@@ -24,7 +24,7 @@ class NilaiController extends Controller
     {
         $kelas = Auth::user()->class;
         $ujiansekolah = DB::table('ujian_sekolah')
-            ->join('students', 'ujian_sekolah.NIS', '=', 'students.NIS')
+            ->join('students', 'ujian_sekolah.kode', '=', 'students.kode')
             ->select('ujian_sekolah.*', 'students.nama', 'students.Kelas')
             ->where('students.Kelas', $kelas)
             ->get();
@@ -36,14 +36,14 @@ class NilaiController extends Controller
         $kelas = Auth::user()->class;
         if (($kelas == 'MIPA 1') or ($kelas == 'MIPA 2') or ($kelas == 'MIPA 3') or ($kelas == 'MIPA 4')) {
             $sciences = DB::table('ujian_praktek')
-                ->join('students', 'ujian_praktek.NIS', '=', 'students.NIS')
+                ->join('students', 'ujian_praktek.kode', '=', 'students.kode')
                 ->select('ujian_praktek.*', 'students.nama', 'students.Kelas')
                 ->where('students.Kelas', $kelas)
                 ->get();
             return view('content.teacher.praktekmipa', compact('sciences'));
         } else {
             $socials = DB::table('ujian_praktek')
-                ->join('students', 'ujian_praktek.NIS', '=', 'students.NIS')
+                ->join('students', 'ujian_praktek.kode', '=', 'students.kode')
                 ->select('ujian_praktek.*', 'students.nama', 'students.Kelas')
                 ->where('students.Kelas', $kelas)
                 ->get();

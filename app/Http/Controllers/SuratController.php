@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\finalNilai;
 use App\Models\setting;
 use App\Models\student;
+use App\Models\ujianPraktek;
+use App\Models\ujianSekolah;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -27,20 +30,32 @@ class SuratController extends Controller
         return view('content.teacher.sklu', compact('sklu'));
     }
 
-    public function DownloadSKLU($NIS)
+    public function DownloadSKLU($kode)
     {
         //loadview
         $setting = setting::first();
-        $data = student::where('NIS', $NIS)->first();
+        $data = student::where('kode', $kode)->first();
         return view('content.surat.view-sklu', compact('data', 'setting'));
     }
 
+
     public function DownloadSKHU(Request $request)
     {
+
+        //data
+        $id = $request->kode;
         $kelas = Auth::user()->class;
+        $setting = setting::first();
+        $data = student::where('kode', $id)->first();
+        $mapel = student::getMapel($kelas);
+        $KKM = $setting->KKM;
+        $persenUS = $setting->presentase_US;
+        $persenUP = $setting->presentase_UP;
+
+
         //nilai raport
         $raportObject = DB::table('raports')
-            ->join('students', 'raports.NIS', '=', 'students.NIS')
+            ->join('students', 'raports.kode', '=', 'students.kode')
             ->select(
                 DB::raw('avg(raports.agama) as AGM'),
                 DB::raw('avg(raports.PPKn) as PKN'),
@@ -58,21 +73,51 @@ class SuratController extends Controller
                 DB::raw('avg(raports.jurusan4) as J4'),
                 DB::raw('avg(raports.peminatan) as PMT')
             )
-            ->where('students.NIS', $request->NIS)
+            ->where('students.kode', $id)
             ->first();
         $raport = json_decode(json_encode($raportObject), true);
 
-        //nilai US
+        //nilai akhir
+        $US = ujianSekolah::getNilai($id);
+        $UP = ujianPraktek::getNilai($id);
 
-        //KKM
-        $getKKM = setting::getKKM();
-        $KKM = (int)$getKKM;
 
-        //data
-        $setting = setting::first();
-        $data = student::where('NIS', $request->NIS)->first();
-        $mapel = student::getMapel($kelas);
-        // dd($mapel);
-        return view('content.surat.view-skhu', compact('raport', 'KKM', 'setting', 'data', 'mapel'));
+
+        //assign nilai
+        $AGM = finalNilai::getNilai($id, "agama");
+        $PKN = finalNilai::getNilai($id, "PPKn");
+        $IDN = finalNilai::getNilai($id, "bahasa_indonesia");
+        $MTK = finalNilai::getNilai($id, "matematika");
+        $SEJ = finalNilai::getNilai($id, "sejarah_indonesia");
+        $EN = finalNilai::getNilai($id, "bahasa_inggris");
+        $SENI = finalNilai::getNilai($id, "seni_budaya");
+        $PJOK = finalNilai::getNilai($id, "PJOK");
+        $PKWU = finalNilai::getNilai($id, "PKWU");
+        $JAWA = finalNilai::getNilai($id, "bahasa_jawa");
+        $J1 = finalNilai::getNilai($id, "jurusan1");
+        $J2 = finalNilai::getNilai($id, "jurusan2");
+        $J3 = finalNilai::getNilai($id, "jurusan3");
+        $J4 = finalNilai::getNilai($id, "jurusan4");
+        $PMT = finalNilai::getNilai($id, "peminatan");
+
+        $nilaiakhir = array(
+            'AGM' => $AGM,
+            'PKN' => $PKN,
+            'IDN' => $IDN,
+            'MTK' => $MTK,
+            'SEJ' => $SEJ,
+            'EN' => $EN,
+            'SENI' => $SENI,
+            'PJOK' => $PJOK,
+            'PKWU' => $PKWU,
+            'JAWA' => $JAWA,
+            'J1' => $J1,
+            'J2' => $J2,
+            'J3' => $J3,
+            'J4' => $J4,
+            'PMT' => $PMT
+        );
+        dd($raport);
+        return view('content.surat.view-skhu', compact('raport', 'nilaiakhir', 'KKM', 'setting', 'data', 'mapel'));
     }
 }

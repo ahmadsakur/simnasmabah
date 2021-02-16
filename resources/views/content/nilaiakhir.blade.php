@@ -15,7 +15,7 @@
                </nav>
             </div>
             <div class="col-lg-6 col-5 text-right">
-               <a href="{{route('refreshraport')}}" class="btn btn-sm btn-neutral"><i
+               <a href="{{route('refreshnilai')}}" class="btn btn-sm btn-neutral"><i
                      class="fas fa-redo-alt"></i><span>Refresh</span></a>
             </div>
          </div>

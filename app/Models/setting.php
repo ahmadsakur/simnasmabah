@@ -15,11 +15,4 @@ class setting extends Model
 
         return $Setting;
     }
-
-    public static function getKKM()
-    {
-        $KKM = setting::select('KKM')->first();
-
-        return $KKM->KKM;
-    }
 }

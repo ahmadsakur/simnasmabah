@@ -83,7 +83,7 @@
                               <a href="/ujianpraktek" class="nav-link">Ujian Praktek</a>
                            </li>
                            <li class="nav-item">
-                              <a href="/finalraport" class="nav-link">Nilai Akhir</a>
+                              <a href="/nilaiakhir" class="nav-link">Nilai Akhir</a>
                            </li>
                         </ul>
                      </div>
