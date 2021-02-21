@@ -114,38 +114,38 @@
          <tr>
             <td class="number">1</td>
             <td>Pendidikan Agama dan Budi Pekerti</td>
-            <td class="marks">{{round($raport["AGM"],0,2)}}</td>
-            <td class="marks">{{round(($nilaiakhir["AGM"] + $raport["AGM"])/2)}}</td>
+            <td class="marks">{{round($raport["AGM"])}}</td>
+            <td class="marks">{{$nilaiakhir["AGM"]}}</td>
          </tr>
          <tr>
             <td class="number">2</td>
             <td>Pendidikan Pancasila dan Kewarganegaraan</td>
-            <td class="marks">{{round($raport["PKN"],0,2)}}</td>
-            <td class="marks">{{round(($nilaiakhir["PKN"] + $raport["PKN"])/2)}}</td>
+            <td class="marks">{{round($raport["PKN"])}}</td>
+            <td class="marks">{{$nilaiakhir["PKN"]}}</td>
          </tr>
          <tr>
             <td class="number">3</td>
             <td>Bahasa Indonesia</td>
-            <td class="marks">{{round($raport["IND"],0,2)}}</td>
-            <td class="marks">{{round(($nilaiakhir["IDN"] + $raport["IND"])/2)}}</td>
+            <td class="marks">{{round($raport["IND"])}}</td>
+            <td class="marks">{{$nilaiakhir["IDN"]}}</td>
          </tr>
          <tr>
             <td class="number">4</td>
             <td>Matematika</td>
-            <td class="marks">{{round($raport["MTK"],0,2)}}</td>
-            <td class="marks">{{round(($nilaiakhir["MTK"] + $raport["MTK"])/2)}}</td>
+            <td class="marks">{{round($raport["MTK"])}}</td>
+            <td class="marks">{{$nilaiakhir["MTK"]}}</td>
          </tr>
          <tr>
             <td class="number">5</td>
             <td>Sejarah Indonesia</td>
-            <td class="marks">{{round($raport["SEJ"],0,2)}}</td>
-            <td class="marks">{{round(($nilaiakhir["SEJ"] + $raport["SEJ"])/2)}}</td>
+            <td class="marks">{{round($raport["SEJ"])}}</td>
+            <td class="marks">{{$nilaiakhir["SEJ"]}}</td>
          </tr>
          <tr>
             <td class="number">6</td>
             <td>Bahasa Inggris</td>
-            <td class="marks">{{round($raport["EN"],0,2)}}</td>
-            <td class="marks">{{round(($nilaiakhir["EN"] + $raport["EN"])/2)}}</td>
+            <td class="marks">{{round($raport["EN"])}}</td>
+            <td class="marks">{{$nilaiakhir["EN"]}}</td>
          </tr>
          <tr>
             <td colspan="2" style="font-weight: bold;">Kelompok B</td>
@@ -155,20 +155,20 @@
          <tr>
             <td class="number">1</td>
             <td>Seni Budaya</td>
-            <td class="marks">{{round($raport["SENI"],0,2)}}</td>
-            <td class="marks">{{round(($nilaiakhir["SENI"] + $raport["SENI"])/2)}}</td>
+            <td class="marks">{{round($raport["SENI"])}}</td>
+            <td class="marks">{{$nilaiakhir["SENI"]}}</td>
          </tr>
          <tr>
             <td class="number">2</td>
             <td>Pendidikan Jasmani, Olahraga dan Kesehatan</td>
-            <td class="marks">{{round($raport["PJOK"],0,2)}}</td>
-            <td class="marks">{{round(($nilaiakhir["PJOK"] + $raport["PJOK"])/2)}}</td>
+            <td class="marks">{{round($raport["PJOK"])}}</td>
+            <td class="marks">{{$nilaiakhir["PJOK"]}}</td>
          </tr>
          <tr>
             <td class="number">3</td>
             <td>Prakarya dan Kewirausahaan</td>
-            <td class="marks">{{round($raport["PKWU"],0,2)}}</td>
-            <td class="marks">{{round(($nilaiakhir["PKWU"] + $raport["PKWU"])/2)}}</td>
+            <td class="marks">{{round($raport["PKWU"])}}</td>
+            <td class="marks">{{$nilaiakhir["PKWU"]}}</td>
          </tr>
          <tr>
             <td class="number">4</td>
@@ -179,8 +179,8 @@
          <tr>
             <td></td>
             <td>a. Bahasa Jawa</td>
-            <td class="marks">{{round($raport["JAWA"],0,2)}}</td>
-            <td class="marks">{{round(($nilaiakhir["JAWA"] + $raport["JAWA"])/2)}}</td>
+            <td class="marks">{{round($raport["JAWA"])}}</td>
+            <td class="marks">{{$nilaiakhir["JAWA"]}}</td>
          </tr>
          <tr>
             <td colspan="2" style="font-weight: bold;">Kelompok C</td>
@@ -190,26 +190,26 @@
          <tr>
             <td class="number">1</td>
             <td id="jurusan1">{{$mapel["J1"]}}</td>
-            <td class="marks">{{round($raport["J1"],0,2)}}</td>
-            <td class="marks">{{round(($nilaiakhir["J1"] + $raport["J1"])/2)}}</td>
+            <td class="marks">{{round($raport["J1"])}}</td>
+            <td class="marks">{{$nilaiakhir["J1"]}}</td>
          </tr>
          <tr>
             <td class="number">2</td>
             <td id="jurusan2">{{$mapel["J2"]}}</td>
-            <td class="marks">{{round($raport["J2"],0,2)}}</td>
-            <td class="marks">{{round(($nilaiakhir["J2"] + $raport["J2"])/2)}}</td>
+            <td class="marks">{{round($raport["J2"])}}</td>
+            <td class="marks">{{$nilaiakhir["J2"]}}</td>
          </tr>
          <tr>
             <td class="number">3</td>
             <td id="jurusan3">{{$mapel["J3"]}}</td>
-            <td class="marks">{{round($raport["J3"],0,2)}}</td>
-            <td class="marks">{{round(($nilaiakhir["J3"] + $raport["J3"])/2)}}</td>
+            <td class="marks">{{round($raport["J3"])}}</td>
+            <td class="marks">{{$nilaiakhir["J3"]}}</td>
          </tr>
          <tr>
             <td class="number">4</td>
             <td id="jurusan4">{{$mapel["J4"]}}</td>
-            <td class="marks">{{round($raport["J4"],0,2)}}</td>
-            <td class="marks">{{round(($nilaiakhir["J4"] + $raport["J4"])/2)}}</td>
+            <td class="marks">{{round($raport["J4"])}}</td>
+            <td class="marks">{{$nilaiakhir["J4"]}}</td>
          </tr>
          <tr>
             <td class="number">5</td>
@@ -220,27 +220,31 @@
          <tr>
             <td></td>
             <td id="peminatan">{{$mapel["Peminatan"]}}</td>
-            <td class=" marks">{{round($raport["PMT"],0,2)}}</td>
-            <td class="marks">{{round(($nilaiakhir["PMT"] + $raport["PMT"])/2)}}</td>
+            <td class=" marks">{{round($raport["PMT"])}}</td>
+            <td class="marks">{{$nilaiakhir["PMT"]}}</td>
          </tr>
          <tr style="font-weight: bold">
             <td colspan="2">Rata Rata</td>
-            <td class="marks">{{substr(array_sum($raport)/count($raport),0,5)}}</td>
-            <td class="marks">~</td>
+            <td class="marks">
+               {{substr((round($raport["AGM"])+round($raport["PKN"])+round($raport["IND"])+round($raport["MTK"])+round($raport["SEJ"])+round($raport["EN"])+round($raport["SENI"])+round($raport["PJOK"])+round($raport["PKWU"])+round($raport["JAWA"])+round($raport["J1"])+round($raport["J2"])+round($raport["J3"])+round($raport["J4"])+round($raport["PMT"]))/count($raport),0,5)}}
+            </td>
+            <td class="marks">{{substr(array_sum($nilaiakhir)/count($nilaiakhir),0,5)}}</td>
          </tr>
       </tbody>
    </table>
    <br>
-   <p style="text-align: left; float: right; padding-right: 40px">Subah, 2 Mei 2020<br>Kepala Sekolah Penyelenggara
+   <p style="text-align: left; float: right; padding-right: 40px">Subah,
+      {{ \Carbon\Carbon::parse($setting->tgl_skhu)->locale('id')->isoFormat('D MMMM Y')}}<br>Kepala Sekolah
+      Penyelenggara
       <br>
       <br>
       <br>
       <br>
       <br>
       <br>
-      <b>ttt</b>
+      <b>{{$setting->kepala_sekolah}}</b>
       <br>
-      NIP. 64752735471 </p>
+      NIP. {{$setting->NIP}}</p>
 </body>
 
 </html>

@@ -40,9 +40,9 @@
                   <table class="table table-striped" id="datatable-basic">
                      <thead class="thead-light">
                         <tr>
-                           <th>Nomor Surat</th>
-                           <th>Nama Lengkap</th>
                            <th>NIS</th>
+                           <th>Nama Lengkap</th>
+                           <th>Nomor Surat</th>
                            <th>Kelas</th>
                            <th>Action</th>
                         </tr>
@@ -51,14 +51,11 @@
                         @forelse($skhu as $key => $item)
                         <tr>
                            {{-- <td>{{$key}}</td> --}}
-                           <td>{{$item->no_surat}}</td>
-                           <td>{{$item->nama}}</td>
                            <td>{{$item->NIS}}</td>
+                           <td>{{$item->nama}}</td>
+                           <td>{{$item->no_surat}}</td>
                            <td>{{$item->Kelas}}</td>
                            <td>
-                              {{-- <a href="/downloadskhu/{{$item->NIS}}" class="btn btn-sm btn-primary"><i
-                                 class="fa fa-chevron-down" aria-hidden="true"></i>
-                              Download</a> --}}
                               <form action="/downloadskhu" method="POST" target="_blank">
                                  @csrf
                                  <input type="hidden" name="kode" value="{{$item->kode}}">

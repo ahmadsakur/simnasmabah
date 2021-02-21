@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ujianSekolah;
 use App\Imports\UjianSekolahImport;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
@@ -19,6 +20,7 @@ class UjianSekolahController extends Controller
     public function index()
     {
         //
+        $today = Carbon::now()->isoFormat('D MMMM Y');
         $sciences = DB::table('ujian_sekolah')
             ->join('students', 'ujian_sekolah.kode', '=', 'students.kode')
             ->select('ujian_sekolah.*', 'students.nama', 'students.Kelas')
@@ -30,7 +32,7 @@ class UjianSekolahController extends Controller
             ->select('ujian_sekolah.*', 'students.nama', 'students.Kelas')
             ->where('students.Kelas', 'like', 'IPS%')
             ->get();
-        return view('content.ujiansekolah', compact('sciences', 'socials'));
+        return view('content.ujiansekolah', compact('sciences', 'socials', 'today'));
     }
 
     /**

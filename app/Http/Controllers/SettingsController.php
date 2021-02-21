@@ -84,6 +84,9 @@ class SettingsController extends Controller
             'KKM' => $request["KKM"],
             'presentase_US' => $request["presentase-US"],
             'presentase_UP' => $request["presentase-UP"],
+            'tgl_pleno' => $request["tgl_pleno"],
+            'tgl_skhu' => $request["tgl_skhu"],
+            'tgl_sklu' => $request["tgl_sklu"],
         ]);
         return redirect('/adminpanel')->with('toast_info', 'Setting berhasil diupdate');;
     }

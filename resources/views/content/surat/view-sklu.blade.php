@@ -1,7 +1,7 @@
 <html>
 
 <head>
-   <title>SKLU-{{$data->nama}}</title>
+   <title>SKLU-{{$data->Kelas}}-{{$data->nama}}</title>
 
 </head>
 {{-- <style type="text/css" media="print">
@@ -63,8 +63,8 @@
       <tr>
          <td colspan="6" align="justify" style="width: 85%;">
             <p style="text-align: justify-all; padding-right: 40px; padding-left: 65px">Berdasarkan Rapat Pleno
-               penentuan kelulusan SMA Negeri 1 Subah Kabupaten Batang Tahun Pelajaran 2019/2020 pada tanggal 20 April
-               2020 Peserta Ujian :</p>
+               penentuan kelulusan SMA Negeri 1 Subah Kabupaten Batang Tahun Pelajaran 2019/2020 pada tanggal
+               {{ \Carbon\Carbon::parse($setting->tgl_pleno)->locale('id')->isoFormat('D MMMM Y')}} Peserta Ujian :</p>
          </td>
       </tr>
       <tr>
@@ -91,7 +91,7 @@
       </tr>
       <tr>
          <td colspan="4" style="padding-left: 65px;"><br>Dinyatakan</td>
-         <td><br>: <b>LULUS</b></td>
+         <td><br>: <b>{{$status}}</b></td>
       </tr>
       <tr>
          <td colspan="6" align="justify" style="width: 85%;">
@@ -102,7 +102,9 @@
    </table>
    <br>
    <br>
-   <p style="text-align: left; float: right; padding-right: 40px">Subah, 2 Mei 2020<br>Kepala Sekolah Penyelenggara
+   <p style="text-align: left; float: right; padding-right: 40px">Subah,
+      {{ \Carbon\Carbon::parse($setting->tgl_sklu)->locale('id')->isoFormat('D MMMM Y')}}<br>Kepala Sekolah
+      Penyelenggara
       <br>
       <br>
       <br>
@@ -116,6 +118,12 @@
       <br>
       NIP. 827467325475
    </p>
+
+
+   {{-- print --}}
+   <script type="text/javascript">
+      window.print();
+   </script>
 </body>
 
 </html>

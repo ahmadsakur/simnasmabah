@@ -64,7 +64,7 @@ Route::middleware('role:walikelas')->group(function () {
     //surat
     Route::get('/skhu', 'App\Http\Controllers\SuratController@SKHU');
     Route::get('/sklu', 'App\Http\Controllers\SuratController@SKLU');
-    Route::get('/downloadsklu/{id}', 'App\Http\Controllers\SuratController@DownloadSKLU');
+    Route::post('/downloadsklu', 'App\Http\Controllers\SuratController@DownloadSKLU');
     Route::post('/downloadskhu', 'App\Http\Controllers\SuratController@DownloadSKHU');
 
 

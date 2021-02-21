@@ -303,7 +303,7 @@
                <div class="modal-body">
                   <input type="hidden" name="id" id="settings-id">
                   <div class="row">
-                     <div class="col-md-12">
+                     <div class="col-md-6">
                         <label for="kepsek">Kepala Sekolah</label>
                         <div class="form-group">
                            <div class="input-group input-group-merge">
@@ -315,9 +315,7 @@
                            </div>
                         </div>
                      </div>
-                  </div>
-                  <div class="row">
-                     <div class="col-md-8">
+                     <div class="col-md-6">
                         <div class="form-group">
                            <label for="NIP">NIP</label>
                            <div class="input-group input-group-merge">
@@ -329,12 +327,40 @@
                            </div>
                         </div>
                      </div>
-                     <div class="col-md-4">
+                  </div>
+                  <div class="row">
+                     <div class="col-md-6">
                         <div class="form-group">
-                           <label for="KKM">KKM</label>
+                           <label for="tgl_skhu">Tanggal Terbit SKHU</label>
+                           <div class="input-group input-group-merge">
+                              <input class="form-control" type="date" name="tgl_skhu" id="settings-tgl_skhu" required>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="form-group">
+                           <label for="tgl_sklu">Tanggal Terbit SKLU</label>
+                           <div class="input-group input-group-merge">
+                              <input class="form-control" type="date" name="tgl_sklu" id="settings-tgl_sklu" required>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-6">
+                        <div class="form-group">
+                           <label for="tgl_pleno">Tanggal Rapat Pleno</label>
+                           <div class="input-group input-group-merge">
+                              <input class="form-control" type="date" name="tgl_pleno" id="settings-tgl_pleno" required>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <div class="form-group">
+                           <label for="KKM">KKM Kelulusan</label>
                            <div class="input-group input-group-merge">
                               <div class="input-group-prepend">
-                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                 <span class="input-group-text"><i class="fas fa-greater-than-equal"></i></span>
                               </div>
                               <input class="form-control" placeholder="Batas KKM" type="number" min="0" max="100"
                                  name="KKM" id="settings-KKM" required>
@@ -348,7 +374,7 @@
                         <div class="form-group">
                            <div class="input-group input-group-merge">
                               <div class="input-group-prepend">
-                                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                 <span class="input-group-text"><i class="fas fa-percent"></i></span>
                               </div>
                               <input class="form-control" placeholder="% Ujian Sekolah" type="number" min="0" max="100"
                                  name="presentase-US" id="settings-US">
@@ -360,7 +386,7 @@
                         <div class="form-group">
                            <div class="input-group input-group-merge">
                               <div class="input-group-prepend">
-                                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                                 <span class="input-group-text"><i class="fa fa-percent"></i></span>
                               </div>
                               <input class="form-control" placeholder="$ Ujian Praktek" type="number" min="0" max="100"
                                  name="presentase-UP" id="settings-UP">
@@ -421,6 +447,9 @@ $(document).on('click','button#editSettingsButton',function(){
       success: function(res){         
          $('#settings-id').val(res[0].id);
          $('#settings-kepsek').val(res[0].kepala_sekolah);
+         $('#settings-tgl_pleno').val(res[0].tgl_pleno);
+         $('#settings-tgl_skhu').val(res[0].tgl_skhu);
+         $('#settings-tgl_sklu').val(res[0].tgl_sklu);
          $('#settings-KKM').val(res[0].KKM);
          $('#settings-NIP').val(res[0].NIP);
          $('#settings-US').val(res[0].presentase_US);

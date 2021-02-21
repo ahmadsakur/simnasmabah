@@ -15,4 +15,5 @@ class setting extends Model
 
         return $Setting;
     }
+    public $timestamps = false;
 }

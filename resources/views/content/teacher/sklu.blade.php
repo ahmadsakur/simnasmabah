@@ -41,9 +41,9 @@
                      <thead class="thead-light">
                         <tr>
                            {{-- <th>No</th> --}}
-                           <th>Nomor Surat</th>
-                           <th>Nama Lengkap</th>
                            <th>NIS</th>
+                           <th>Nama Lengkap</th>
+                           <th>Nomor Surat</th>
                            <th>Kelas</th>
                            <th>Action</th>
                         </tr>
@@ -52,13 +52,17 @@
                         @forelse($sklu as $key => $item)
                         <tr>
                            {{-- <td>{{$key}}</td> --}}
-                           <td>{{$item->no_surat}}</td>
-                           <td>{{$item->nama}}</td>
                            <td>{{$item->NIS}}</td>
+                           <td>{{$item->nama}}</td>
+                           <td>{{$item->no_surat}}</td>
                            <td>{{$item->Kelas}}</td>
-                           <td><a href="/downloadsklu/{{$item->NIS}}" class="btn btn-sm btn-primary" target="_blank"><i
-                                    class="fa fa-chevron-down" aria-hidden="true"></i>
-                                 Download</a></td>
+                           <td>
+                              <form action="/downloadsklu" method="POST" target="_blank">
+                                 @csrf
+                                 <input type="hidden" name="kode" value="{{$item->kode}}">
+                                 <button class="btn btn-sm btn-primary">Download</button>
+                              </form>
+                           </td>
                         </tr>
                         @empty
                         <tr>
