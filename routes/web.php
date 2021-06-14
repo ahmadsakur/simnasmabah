@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +21,11 @@ Route::match(['get', 'post'], 'register', function () {
     return redirect('/');
 });
 Route::get('/', [App\Http\Controllers\LandingController::class, 'home'])->name('home');
+
+Route::get('/failedlogin', function(){
+    
+    return redirect('/')->with('toast_error', 'Kombinasi Email dan Password Tidak Sesuai!');
+});
 Route::middleware('role:admin')->get('/adminpanel', [App\Http\Controllers\HomeController::class, 'admin'])->name('adminpanel');
 Route::middleware('role:walikelas')->get('/dashboard', [App\Http\Controllers\HomeController::class, 'walikelas'])->name('teacherpanel');
 

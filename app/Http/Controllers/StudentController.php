@@ -109,7 +109,7 @@ class StudentController extends Controller
             'no_Peserta' => $request["noPeserta"],
             'no_surat' => $request["surat"],
         ]);
-        return redirect('/siswa')->with('toast_info', 'Data Berhasil diubah');;
+        return redirect('/siswa')->with('toast_info', 'Data Berhasil diubah');
     }
 
     /**

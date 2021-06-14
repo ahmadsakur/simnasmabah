@@ -59,7 +59,7 @@
                   <div class="card-body">
                      <div class="row">
                         <div class="col">
-                           <h5 class="card-title text-uppercase text-muted mb-0">Account Setting</h5>
+                           <h5 class="card-title text-uppercase text-muted mb-0">Account <br>Setting</h5>
                            <button type="button" data-id="{{Auth::user()->id}}" data-name="{{Auth::user()->name}}"
                               data-email="{{Auth::user()->email}}" data-toggle="modal" data-target="#accountModal"
                               class="mt-2 btn btn-sm btn-outline-warning" id="editAdminButton">Account</button>
@@ -79,7 +79,7 @@
                   <div class="card-body">
                      <div class="row">
                         <div class="col">
-                           <h5 class="card-title text-uppercase text-muted mb-0">Apps Setting</h5>
+                           <h5 class="card-title text-uppercase text-muted mb-0">Apps <br>Setting</h5>
                            <button type="button" id="editSettingsButton" data-toggle="modal"
                               data-target="#settingsModal" data-id="{{$settings->id}}"
                               class="mt-2 btn btn-sm btn-outline-warning">Settings</button>
