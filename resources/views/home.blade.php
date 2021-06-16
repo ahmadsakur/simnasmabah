@@ -49,8 +49,7 @@
                      <p class="hero-paragraph is-revealing">Sistem Informasi Manajemen Nilai Akhir (SIMNA) merupakan
                         Sistem Informasi berbasis Website untuk mengelola Nilai Siswa.</p>
                      <div class="hero-form newsletter-form is-revealing">
-                        <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#loginModal">Get
-                           Started<span><i class="fa fa-external-link" aria-hidden="true"></i></span></button>
+                        <button class="btn btn-warning" type="button" data-toggle="modal" data-target="#loginModal">Log In<span><i class="fa fa-external-link" aria-hidden="true"></i></span></button>
                      </div>
                      <footer class="footer pt-0">
                         <h6 class="text-muted copyright">&copy; 2021 SIMNA | SMA N 1 Subah</h6>
@@ -77,11 +76,13 @@
                      <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <span class="login100-form-title p-b-26">
-                           Welcome
+                           Selamat Datang
                         </span>
+                        {{-- <p class="text-sm text-center">Sistem Informasi Manajemen Nilai Akhir</p> --}}
                         <span class="login100-form-title p-b-48">
-                           <i class="zmdi zmdi-font"></i>
+                           <img src="{{asset('img/logosmabah.png')}}" alt="" width="50px" class="mx-auto d-block">
                         </span>
+                        
 
                         <div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
                            <input class="input100" type="text" name="email" id="email" autocomplete="off" required>

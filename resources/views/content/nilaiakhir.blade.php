@@ -108,7 +108,6 @@
                      <tr>
                         <th>Nama</th>
                         <th>Kelas</th>
-                        <th>Semester</th>
                         <th>AGM</th>
                         <th>PPKn</th>
                         <th>IND</th>
@@ -127,11 +126,10 @@
                      </tr>
                   </thead>
                   <tbody>
-                     {{-- @forelse($socials as $social)
+                     @forelse($finalsocials as $social)
                      <tr>
                         <td> {{ $social->nama }} </td>
                      <td> {{ $social->Kelas }} </td>
-                     <td> {{ $social->semester }} </td>
                      <td> {{ $social->agama }}</td>
                      <td> {{ $social->PPKn }}</td>
                      <td> {{ $social->bahasa_indonesia }}</td>
@@ -152,7 +150,7 @@
                      <tr>
                         <td colspan="17" align="center">Data Nilai Tidak diTemukan</td>
                      </tr>
-                     @endforelse --}}
+                     @endforelse
                   </tbody>
                </table>
             </div>

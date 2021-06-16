@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
 
 class StudentController extends Controller
 {
@@ -41,15 +43,18 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             "kode" => 'unique:students',
             "NIS" => 'unique:students',
             "NISN" => 'unique:students',
             "no_peserta" => 'unique:students',
             "no_surat" => 'unique:students'
-
         ]);
+
+        if ($validator->fails()) {
+            return redirect('/siswa')->with('toast_error', 'Data Unique tidak boleh sama!');
+        }
+        
         student::create([
             "kode" => $request["kode"],
             "nama" => $request["nama"],
@@ -98,6 +103,18 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $validator = Validator::make($request->all(), [
+            "kode" => 'unique:students',
+            "NIS" => 'unique:students',
+            "NISN" => 'unique:students',
+            "no_peserta" => 'unique:students',
+            "no_surat" => 'unique:students'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/siswa')->with('toast_error', 'Data Unique tidak boleh sama!');
+        }
         student::where('id', $request["id"])->update([
             'id' => $request["id"],
             'nama' => $request["nama"],

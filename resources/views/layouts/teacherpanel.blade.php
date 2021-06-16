@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,7 +29,8 @@
          <!-- Brand -->
          <div class="sidenav-header d-flex align-items-center">
             <a class="navbar-brand" href="/dashboard">
-               <img src="argon/img/brand/blue.png" class="navbar-brand-img" alt="...">
+               {{-- <img src="argon/img/brand/blue.png" class="navbar-brand-img" alt="..."> --}}
+               <img src="{{ asset('img/simna.svg') }}" class="navbar-brand-img" alt="..." height="80">
             </a>
             <div class="ml-auto">
                <!-- Sidenav toggler -->

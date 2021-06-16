@@ -113,17 +113,17 @@
                   <div class="form-row">
                      <div class="form-group col-md-4">
                         <label for="kode">Kode</label>
-                        <input type="text" class="form-control" id="kode" name="kode" placeholder="Kode Siswa" required>
+                        <input type="text" class="form-control" id="kode" name="kode" placeholder="Kode Siswa" required autocomplete="off">
                      </div>
                      <div class="form-group col-md-4">
                         <label for="NIS">NIS</label>
                         <input type="text" class="form-control" id="NIS" name="NIS" placeholder="Nomor Induk Sekolah"
-                           required>
+                           required autocomplete="off">
                      </div>
                      <div class="form-group col-md-4">
                         <label for="NISN">NISN</label>
                         <input type="text" class="form-control" id="NISN" name="NISN"
-                           placeholder="Nomor Induk Siswa Nasional" required>
+                           placeholder="Nomor Induk Siswa Nasional" required autocomplete="off">
                      </div>
                   </div>
                   <div class="form-row">
@@ -150,12 +150,12 @@
                      <div class="form-group col-md-6">
                         <label for="walimurid">Orang Tua/Wali</label>
                         <input type="text" class="form-control" id="walimurid" name="walimurid"
-                           placeholder="Muhammad Bapak" required>
+                           placeholder="" required autocomplete="off">
                      </div>
                      <div class="form-group col-md-6">
                         <label for="noPeserta">Nomor Peserta</label>
                         <input type="text" class="form-control" id="noPeserta" name="noPeserta"
-                           placeholder="31-139-xxxx" required>
+                           placeholder="31-139-xxxx" required autocomplete="off">
                      </div>
                   </div>
                </div>
@@ -235,7 +235,7 @@
                      <div class="form-group col-md-6">
                         <label for="edit-walimurid">Orang Tua/Wali</label>
                         <input type="text" class="form-control" id="edit-walimurid" name="walimurid"
-                           placeholder="Muhammad Bapak" required>
+                            required>
                      </div>
                      <div class="form-group col-md-6">
                         <label for="edit-noPeserta">Nomor Peserta</label>

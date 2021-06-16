@@ -25,7 +25,16 @@ class NilaiAkhirController extends Controller
             ->select('students.nama', 'students.Kelas', 'final_nilai.*')
             ->where('students.Kelas', 'like', 'MIPA%')
             ->get();
-        return view('content.nilaiakhir', compact('finalsciences'));
+        
+
+        $finalsocials =
+            DB::table('final_nilai')
+            ->join('students', 'final_nilai.kode', '=', 'students.kode')
+            ->select('students.nama', 'students.Kelas', 'final_nilai.*')
+            ->where('students.Kelas', 'like', 'IPS%')
+            ->get();
+
+        return view('content.nilaiakhir', compact('finalsciences','finalsocials'));
     }
 
     /**
@@ -179,6 +188,13 @@ class NilaiAkhirController extends Controller
             ->where('students.Kelas', 'like', 'MIPA%')
             ->get();
 
-        return view('content.nilaiakhir', compact('finalsciences'));
+        $finalsocials =
+            DB::table('final_nilai')
+            ->join('students', 'final_nilai.kode', '=', 'students.kode')
+            ->select('students.nama', 'students.Kelas', 'final_nilai.*')
+            ->where('students.Kelas', 'like', 'IPS%')
+            ->get();
+
+        return view('content.nilaiakhir', compact('finalsciences','finalsocials'));
     }
 }

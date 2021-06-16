@@ -48,7 +48,8 @@
          </td>
       </tr>
       <tr>
-         <td colspan="6" align="center" style="margin-right: 30px;"><br><b>PENGUMUMAN KELULUSAN TAHUN 2020 <br> SMA
+         <td colspan="6" align="center" style="margin-right: 30px;"><br><b>PENGUMUMAN KELULUSAN TAHUN 
+            {{ \Carbon\Carbon::parse($setting->tgl_pleno)->locale('id')->isoFormat('Y')}} <br> SMA
                NEGERI 1
                SUBAH</b></td>
       </tr>
@@ -63,7 +64,7 @@
       <tr>
          <td colspan="6" align="justify" style="width: 85%;">
             <p style="text-align: justify-all; padding-right: 40px; padding-left: 65px">Berdasarkan Rapat Pleno
-               penentuan kelulusan SMA Negeri 1 Subah Kabupaten Batang Tahun Pelajaran 2019/2020 pada tanggal
+               penentuan kelulusan SMA Negeri 1 Subah Kabupaten Batang Tahun Pelajaran {{ \Carbon\Carbon::parse($setting->tgl_pleno)->locale('id')->isoFormat('Y')-1}}/{{ \Carbon\Carbon::parse($setting->tgl_pleno)->locale('id')->isoFormat('Y')}} pada tanggal
                {{ \Carbon\Carbon::parse($setting->tgl_pleno)->locale('id')->isoFormat('D MMMM Y')}} Peserta Ujian :</p>
          </td>
       </tr>

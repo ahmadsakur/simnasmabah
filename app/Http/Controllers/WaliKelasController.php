@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class WaliKelasController extends Controller
 {
@@ -38,13 +39,16 @@ class WaliKelasController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             "name" => 'required',
             "email" => 'required|unique:users',
             "class" => 'required',
             "password" => 'required'
         ]);
+
+        if ($validator->fails()) {
+            return redirect('/guru')->with('toast_error', 'Email Sudah digunakan!');
+        }
 
         $insertQ = User::create([
             "name" => $request["name"],
@@ -89,7 +93,17 @@ class WaliKelasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request["id"]);
+        
+        // $validator = Validator::make($request->all(), [
+        //     "name" => 'required',
+        //     "email" => 'required|unique:users',
+        //     "class" => 'required',
+        //     "password" => 'required'
+        // ]);
+
+        // if ($validator->fails()) {
+        //     return redirect('/guru')->with('toast_error', 'Email Sudah digunakan!');
+        // }
 
         User::where('id', $request["id"])->update([
             'name' => $request["name"],
