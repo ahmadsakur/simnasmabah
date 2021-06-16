@@ -76,12 +76,20 @@ class HomeController extends Controller
 
     public function updateAdmin(Request $request)
     {
+        if($request->filled('password')){
+            User::where('id', $request["id"])->update([
+                'name' => $request["name"],
+                'email' => $request["email"],
+                'password' => Hash::make($request["password"])
+            ]);
+        } else{
+            User::where('id', $request["id"])->update([
+                'name' => $request["name"],
+                'email' => $request["email"],
+            ]); 
+        }
 
-        User::where('id', $request["id"])->update([
-            'name' => $request["name"],
-            'email' => $request["email"],
-            'password' => Hash::make($request["password"])
-        ]);
+        
         return redirect('/adminpanel')->with('toast_info', 'Data Berhasil diubah');;
     }
 
@@ -181,11 +189,19 @@ class HomeController extends Controller
     public function updateGuru(Request $request)
     {
 
-        User::where('id', $request["id"])->update([
-            'name' => $request["name"],
-            'email' => $request["email"],
-            'password' => Hash::make($request["password"])
-        ]);
+        if($request->filled('password')){
+            User::where('id', $request["id"])->update([
+                'name' => $request["name"],
+                'email' => $request["email"],
+                'password' => Hash::make($request["password"])
+            ]);
+        } else{
+            User::where('id', $request["id"])->update([
+                'name' => $request["name"],
+                'email' => $request["email"],
+            ]);
+        }
+        
         return redirect('/dashboard')->with('toast_info', 'Data Berhasil diubah');;
     }
 }

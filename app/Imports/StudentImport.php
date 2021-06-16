@@ -3,10 +3,14 @@
 namespace App\Imports;
 
 use App\Models\student;
+use Maatwebsite\Excel\Concerns\SkipsOnError;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\WithValidation;
+use Throwable;
 
-class StudentImport implements ToModel, WithHeadingRow
+
+class StudentImport implements ToModel, WithHeadingRow, WithValidation
 {
     /**
      * @param array $row
@@ -28,5 +32,13 @@ class StudentImport implements ToModel, WithHeadingRow
             'wali_murid'      => $row['wali_murid'],
             'no_surat' => $row['no_surat'],
         ]);
+    }
+
+    public function rules(): array
+    {
+        return[
+            '*' =>['required'],
+            '*.kode' => ['unique:students']
+        ];
     }
 }

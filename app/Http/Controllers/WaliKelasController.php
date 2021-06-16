@@ -105,12 +105,21 @@ class WaliKelasController extends Controller
         //     return redirect('/guru')->with('toast_error', 'Email Sudah digunakan!');
         // }
 
-        User::where('id', $request["id"])->update([
-            'name' => $request["name"],
-            'email' => $request["email"],
-            'class' => $request["class"],
-            'password' => Hash::make($request["password"])
-        ]);
+        if($request->filled('password')){
+            User::where('id', $request["id"])->update([
+                'name' => $request["name"],
+                'email' => $request["email"],
+                'class' => $request["class"],
+                'password' => Hash::make($request["password"])
+            ]);
+        } else{
+            User::where('id', $request["id"])->update([
+                'name' => $request["name"],
+                'email' => $request["email"],
+                'class' => $request["class"],
+            ]);
+        }
+
         return redirect('/guru')->with('toast_info', 'Data Berhasil diubah');;
     }
 

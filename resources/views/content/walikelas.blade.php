@@ -122,7 +122,7 @@
                      <div class="form-group col-md-6">
                         <label for="confirmPassword">Konfirmasi Password</label>
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
-                           placeholder="Confirm Password" required>
+                           placeholder="Confirm Password">
                      </div>
                   </div>
                </div>

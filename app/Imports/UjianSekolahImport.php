@@ -5,8 +5,9 @@ namespace App\Imports;
 use App\Models\ujianSekolah;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\WithValidation;
 
-class UjianSekolahImport implements ToModel, WithHeadingRow
+class UjianSekolahImport implements ToModel, WithHeadingRow, WithValidation
 {
     /**
      * @param array $row
@@ -33,5 +34,13 @@ class UjianSekolahImport implements ToModel, WithHeadingRow
             'jurusan4'  => $row['kim_eko'],
             'peminatan' => $row['peminatan'],
         ]);
+    }
+
+    public function rules(): array
+    {
+        return[
+            '*' =>['required'],
+            '*.kode' => ['unique:ujian_sekolah']
+        ];
     }
 }

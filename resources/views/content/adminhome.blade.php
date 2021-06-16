@@ -260,7 +260,7 @@
                                  <span class="input-group-text"><i class="fa fa-lock"></i></span>
                               </div>
                               <input class="form-control" placeholder="Password" type="password" name="password"
-                                 id="password" required>
+                                 id="password">
                            </div>
                         </div>
                      </div>
@@ -272,7 +272,7 @@
                                  <span class="input-group-text"><i class="fa fa-lock"></i></span>
                               </div>
                               <input class="form-control" placeholder="Password" type="password" name="confirmPassword"
-                                 id="confirmPassword" required>
+                                 id="confirmPassword">
                            </div>
                         </div>
                      </div>

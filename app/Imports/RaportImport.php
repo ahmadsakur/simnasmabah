@@ -3,10 +3,13 @@
 namespace App\Imports;
 
 use App\Models\raport;
+use Maatwebsite\Excel\Concerns\SkipsOnError;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\WithValidation;
+use Throwable;
 
-class RaportImport implements ToModel, WithHeadingRow
+class RaportImport implements ToModel, WithHeadingRow, WithValidation
 {
     /**
      * @param array $row
@@ -35,5 +38,12 @@ class RaportImport implements ToModel, WithHeadingRow
             'jurusan4'  => $row['kim_eko'],
             'peminatan' => $row['peminatan'],
         ]);
+    }
+
+    public function rules(): array
+    {
+        return[
+            '*' =>['required']
+        ];
     }
 }

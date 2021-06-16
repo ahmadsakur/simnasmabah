@@ -4,6 +4,16 @@
 <div class="header bg-primary pb-6">
    <div class="container-fluid">
       <div class="header-body">
+         @if (isset($errors) && $errors->any())
+         <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            @foreach ($errors->all() as $error)
+                <strong>{{ $error }}</strong>
+            @endforeach
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+         @endif
          <div class="row align-items-center py-4">
             <div class="col-lg-6 col-7">
                <h6 class="h2 text-white d-inline-block mb-0">Raport Siswa</h6>
