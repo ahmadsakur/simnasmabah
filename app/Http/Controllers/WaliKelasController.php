@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
+
 
 class WaliKelasController extends Controller
 {
@@ -93,17 +95,13 @@ class WaliKelasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
-        // $validator = Validator::make($request->all(), [
-        //     "name" => 'required',
-        //     "email" => 'required|unique:users',
-        //     "class" => 'required',
-        //     "password" => 'required'
-        // ]);
+        $validator = Validator::make($request->all(), [
+            "email" => Rule::unique('users')->ignore($request->id)
+        ]);
 
-        // if ($validator->fails()) {
-        //     return redirect('/guru')->with('toast_error', 'Email Sudah digunakan!');
-        // }
+        if ($validator->fails()) {
+            return redirect('/guru')->with('toast_error', 'Email Sudah digunakan!');
+        }
 
         if($request->filled('password')){
             User::where('id', $request["id"])->update([

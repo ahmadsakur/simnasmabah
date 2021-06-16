@@ -10,6 +10,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 
 class StudentController extends Controller
@@ -104,13 +105,22 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
 
+        // $validator = Validator::make($request->all(), [
+        //     "kode" => 'unique:students',
+        //     "NIS" => 'unique:students',
+        //     "NISN" => 'unique:students',
+        //     "no_peserta" => 'unique:students',
+        //     "no_surat" => 'unique:students'
+        // ]);
+
         $validator = Validator::make($request->all(), [
-            "kode" => 'unique:students',
-            "NIS" => 'unique:students',
-            "NISN" => 'unique:students',
-            "no_peserta" => 'unique:students',
-            "no_surat" => 'unique:students'
+            "kode" => Rule::unique('students')->ignore($request->id),
+            "NIS" => Rule::unique('students')->ignore($request->id),
+            "NISN" => Rule::unique('students')->ignore($request->id),
+            "no_peserta" => Rule::unique('students')->ignore($request->id),
+            "no_surat" => Rule::unique('students')->ignore($request->id)
         ]);
+
 
         if ($validator->fails()) {
             return redirect('/siswa')->with('toast_error', 'Data Unique tidak boleh sama!');

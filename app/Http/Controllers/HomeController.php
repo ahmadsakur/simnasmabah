@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 
 class HomeController extends Controller
 {
@@ -76,6 +78,13 @@ class HomeController extends Controller
 
     public function updateAdmin(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            "email" => Rule::unique('users')->ignore($request->id)
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/adminpanel')->with('toast_error', 'E-mail sudah digunakan!');
+        }
         if($request->filled('password')){
             User::where('id', $request["id"])->update([
                 'name' => $request["name"],
@@ -189,6 +198,14 @@ class HomeController extends Controller
     public function updateGuru(Request $request)
     {
 
+        $validator = Validator::make($request->all(), [
+            "email" => Rule::unique('users')->ignore($request->id)
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('/dashboard')->with('toast_error', 'E-mail sudah digunakan!');
+        }
+        
         if($request->filled('password')){
             User::where('id', $request["id"])->update([
                 'name' => $request["name"],
